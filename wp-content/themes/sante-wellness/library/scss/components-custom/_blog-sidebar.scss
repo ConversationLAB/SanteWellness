@@ -1,0 +1,114 @@
+// Generic Widget styles
+// ----------------------------------------------------------------
+$widget-spacing : $baseline-md;
+$item-spacing : 5px;
+
+.sidebar__heading {
+	@extend .h4-light;
+}
+
+.sidebar__item {
+	margin-bottom: $widget-spacing;
+	
+	ul, ol {
+		@include menu-mixin; 
+	}
+	li {
+
+	}
+    
+	p {
+        margin-bottom: $item-spacing;
+    }
+
+    select, table, input[type=text] { 
+        width: 100%;
+    }
+}
+
+
+// Specific widgets - general styling
+// ----------------------------------------------------------------
+.widget_categories, .widget_recent_entries, .widget_meta, .widget_recent_entries {
+    li {
+		border-left: solid 2px $brand-primary;
+		padding-left: 10px;
+		margin-bottom: 2px;
+        margin-bottom: $item-spacing;
+
+        a {
+            display: block;
+        }
+    }
+}
+
+
+// Search Form
+// ----------------------------------------------------------------
+.search__form {
+	display: flex;
+}
+	.search__input,
+	.search__button {}
+
+	.search__input { flex: 5}
+
+	.search__button { flex : 1;}
+
+
+
+// Calendar Widget
+// ----------------------------------------------------------------
+.widget_calendar {
+	$cellheight : 1.8em;
+	caption {
+		font-weight: bold;
+
+	}
+	table {
+		width: 100%;
+		table-layout: fixed;		
+	}
+    thead th, caption {
+        font-weight: bold;
+    }
+	tbody {
+		td {
+			border: solid 1px $border-color;
+			text-align: center;
+			padding: 0;
+			height: $cellheight;
+			line-height: $cellheight;
+		}
+		.pad {
+			background-color: $gray-lighter;
+		}
+		a {
+            height: $cellheight;
+            line-height: $cellheight;
+            display: block;
+            background: $brand-primary;
+            color: $white;
+            text-decoration: none;       
+            &:hover {
+                background-color: $brand-primary-alt;
+            } 
+		}
+	}
+
+	tfoot {
+		td {
+			padding-top: 10px;
+		}
+		a {
+			margin-top: 10px;
+			@extend .btn-secondary;        
+			display: block;
+		}
+	}
+    tfoot td {
+        &#next {
+            text-align: right;
+        }
+    }	
+}

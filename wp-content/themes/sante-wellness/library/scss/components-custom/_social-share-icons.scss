@@ -1,0 +1,33 @@
+.menu-social-share {
+	font-size: 0;
+}
+	.social-share-item {
+		margin-right: 1px;
+	}
+		.social-share-link {
+
+			$box: 40px;
+			display: inline-block;
+			font-size: 20px;
+			line-height: $box;
+			text-align: center;
+			background-color: $white;
+			color: $gray;
+			width: $box;
+			height: $box;
+			transition: 200ms all $transition;
+
+			&:hover {
+				background-color: $brand-secondary;
+				color: $white;
+			}
+
+			.navy-social-buttons & {
+				background-color: $brand-secondary;
+				color: $white;
+				&:hover {
+					color : $white;
+					background-color: $brand-primary-alt;
+				}
+			}
+		}

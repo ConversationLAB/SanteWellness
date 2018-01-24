@@ -1,0 +1,32 @@
+// Contact Page
+// ----------------------------------------------------------------
+.contactdetails__wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	font-size: 1.8rem;
+
+	.fa {
+		font-size: 3.5rem;
+	}
+	@media (max-width: $grid-float-breakpoint) {
+		padding: 20px 0;
+	}	
+
+}
+
+
+
+.contactform__wrapper  {	
+
+	.fa {
+		font-size: 2rem;
+	}
+
+	textarea {
+		min-height: 200px;
+	}
+	@media (max-width: $grid-float-breakpoint) {
+		margin-bottom: 20px;
+	}
+}

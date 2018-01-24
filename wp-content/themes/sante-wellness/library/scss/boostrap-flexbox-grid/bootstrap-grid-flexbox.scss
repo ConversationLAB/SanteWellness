@@ -1,0 +1,20 @@
+/*!
+ * Bootstrap Grid Flexbox v1.1.2 (https://github.com/ngengs/bootstrap-grid-flexbox)
+ * Copyright 2016 Rizky Kharisma @ngengs (http://ngengs.com).
+ * Licensed under MIT (https://github.com/ngengs/bootstrap-grid-flexbox/blob/master/LICENSE)
+ */
+
+// Core variables and mixins
+// @import "variables";
+@import "mixins";
+@import "grid";
+
+
+@media screen and (min-width: $screen-sm-min) {
+	.col {
+		flex: 1;
+		margin-left:  ceil(($grid-gutter-width / 2));
+		margin-right: floor(($grid-gutter-width / 2));
+	}
+
+}

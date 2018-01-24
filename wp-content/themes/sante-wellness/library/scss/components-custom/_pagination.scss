@@ -1,0 +1,28 @@
+// Logo
+// ----------------------------------------------------------------
+.pagination {
+	$box: 40px;
+	text-align: center;
+	border-top: solid 1px $border-color;
+	padding-top: 20px;
+
+	ul.page-numbers {
+		@extend .menu-horz-inline;
+		.page-numbers {
+			display: block;
+			width: $box;
+			height: $box;
+			line-height: $box;
+			background-color: $gray-lighter;
+			font-size: $box/2;
+		}
+		a.page-numbers {
+			background-color: $brand-primary;
+			color: $white;
+			&:hover {
+				background-color: $brand-primary-alt;
+			}
+		}
+	}
+
+}

@@ -1,0 +1,58 @@
+// Blog Post Listing
+// ----------------------------------------------------------------
+.post-edit-link {
+	@extend .btn;
+	@extend .btn-xs;
+	@extend .btn-secondary;
+
+	.post-listing__item &,
+	.post-single__item & {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;		
+	}
+
+	.post-listing__item:hover &,
+	.post-single__item:hover & {
+		opacity: 1;
+	}
+}
+
+.entry-date {
+	font-weight: bold;
+}
+
+
+
+// Thumbnail for single and listing pages
+// ----------------------------------------------------------------
+.post__thumbnail {
+	flex: 0 0 200px;
+	@media screen and (max-width: $screen-xs-max) {
+		margin-bottom: $baseline-xs;
+	}	
+}
+
+ 
+
+// Post Pagination
+// ---------------------------------------------------------------- 
+.pagination__posts {}
+
+  	.page-numbers {
+		@include menu-mixin();
+		display: flex;
+		justify-content: center;
+		.page-numbers {
+			@extend .btn;			
+			margin: 0 1px;
+			&:not(.current, .prev, .next) {
+				@extend .btn-secondary;
+			}
+
+			&.current {
+				cursor: default;
+			}
+		}
+	}

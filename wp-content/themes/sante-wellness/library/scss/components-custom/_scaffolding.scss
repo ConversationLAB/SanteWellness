@@ -1,0 +1,90 @@
+html.js {
+	&.wf-loading {
+		opacity: 0;
+	}
+
+	&.wf-active {
+		opacity: 1;
+	}
+}
+
+
+.site-content {
+	min-height: calc(100vh - #{$header-height} - #{$footer-height}  - #{$jumbotron-height});
+	padding-bottom: $baseline-md;
+	padding-top: $baseline-md;
+}
+
+
+// Footer
+// ----------------------------------------------------------------
+.site-footer {
+	padding-top: $padding-sm;
+	min-height: $footer-height;
+}
+
+.footer-social-media__menu {
+	li {
+		margin: 0 4px;
+	}
+	.fa {
+		font-size: 40px;
+	}
+}
+
+
+
+.footer__menu {
+	justify-content: center;
+	li {
+		margin: 0 5px;
+	}
+}
+
+
+
+.footer__logo {
+
+}
+
+.site-footer {
+	background: $gray-darker;
+	color: $gray;
+	a {
+		color: $white;
+	}
+}
+
+
+.site-info {
+	border-top: solid 1px $gray-lighter;
+	padding-top: $padding-xs;
+}
+
+
+// Youtube responsive
+// ----------------------------------------------------------------
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+
+.video-container iframe,  
+.video-container object,  
+.video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+    max-width: 100%;	
+}
+
+// Google Maps
+// ----------------------------------------------------------------
+.js-google-map {
+	height: 500px;
+}

@@ -1,0 +1,60 @@
+$accordion-padding: 25px;
+
+.accordion__menu {}
+
+	.accordion__item {}
+
+		.accordion__link {
+			background-color: $black;
+			display: flex;
+			&:visited {
+				color: $white;
+			}
+			&:hover {
+				background-color: $gray-darker;
+			}
+			.is-active & {
+				background: $gray-darker; 
+			}
+		}
+
+			.accordion__title {
+				font-weight: bold;
+				padding: $accordion-padding;
+				text-transform: uppercase;
+				color: $white;
+				flex: 1 1 auto;
+			}
+
+			.accordion__icon {
+				@include fa-icon();
+				font-size: 24px;
+				padding: 22px $accordion-padding 0 0;
+				color: $white;
+				
+				&:before {
+					content: $fa-var-plus-circle;
+				}
+				.is-active &:before {
+					content: $fa-var-minus-circle;
+				}				
+			}
+		
+		.accordion__panel {
+			padding: 0 $accordion-padding;
+			margin-bottom: 10px;		
+
+			.is-active & {
+				max-height: 50vh;
+				padding: $accordion-padding;
+				overflow-y: auto;
+			}
+		}
+
+		.js {
+			.accordion__panel {
+				max-height: 0;
+				overflow: hidden;
+				transition: all 200ms $transition;
+			}
+		}

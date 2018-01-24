@@ -1,0 +1,108 @@
+// Comments Layout
+// ----------------------------------------------------------------
+a.comment-reply-link {
+	@extend .btn-secondary;
+	@extend .btn-xs;
+	float: right;
+}  
+
+
+.comment__content {
+	p {
+		margin-bottom: $baseline-xs;
+	}
+}
+
+.comment__author  {
+	.avatar {
+		border-radius: 50%;
+		border: solid 4px $white;
+	}
+}
+
+.comment__item {
+	.comment-respond {
+		margin-top: $baseline-md;		
+	}
+}
+
+	.comment__reply {
+		padding: $padding-md;
+		background-color: $gray-lighter;
+	}
+
+.children {
+	@include menu-mixin;
+	margin-top: $baseline-xs;
+	margin-left:  $baseline-md;
+
+	@media (max-width: $grid-float-breakpoint) {
+		margin-top: $baseline-xs;
+		margin-left:  $baseline-xs;		
+	}
+
+	.comment__item {
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+
+
+
+// Comment Form
+// ----------------------------------------------------------------
+.comment-respond {
+	background-color: $white;
+	padding: $padding-md;	 
+	overflow: hidden; 
+	
+	p {
+		margin-bottom: $baseline-xs;
+	}
+	p:not(.comment-form-comment):not(.form-submit) {
+		label {	min-width: 20%;}
+		input {	min-width: 79%;}
+	}
+
+	// Comment form validation
+	label.validation-message {
+		display: none;
+		min-width: 100%;
+		color: $brand-danger;
+
+	}
+	.has-error + label.validation-message {
+		display: block;
+	}
+	@media (min-width: $grid-float-breakpoint) {
+		label.validation-message:not([for="comment"]) {
+			padding-left: calc(20% + 10px);
+		}
+	}
+	.required {
+		color: $brand-danger;
+		font-weight: bold; 
+		font-size: 120%;
+	}
+
+
+	textarea {
+		display: block;
+		width: 100%;
+	}
+	.form-submit {
+		text-align: right;
+	}
+	input[type='submit'] {
+		@extend .btn-primary;		
+	}
+}
+
+
+#cancel-comment-reply-link {
+	float: right;
+}
+

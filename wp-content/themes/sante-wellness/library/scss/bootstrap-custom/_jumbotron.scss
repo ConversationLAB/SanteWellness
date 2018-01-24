@@ -1,0 +1,27 @@
+//
+// Jumbotron
+// --------------------------------------------------
+.jumbotron {
+  padding: $jumbotron-padding 0 0 0;
+  color: $jumbotron-color;
+  background: $jumbotron-bg no-repeat center center;
+  background-size: contain;
+  min-height: $jumbotron-height;
+
+  @media screen and (max-width: $screen-sm-min) {
+    min-height: 200px;
+  }
+
+  h1,
+  .h1 {
+    color: $jumbotron-heading-color;
+  }
+
+  p {
+    margin-bottom: ($jumbotron-padding / 2);
+    font-size: $jumbotron-font-size;
+    font-weight: 200;
+  }
+
+
+}

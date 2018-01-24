@@ -1,0 +1,26 @@
+<?php
+/**
+ * Displays top navigation
+ *
+*/
+?>
+
+<?php // Site navigation ?>
+<div class="wrapper-site-navigation">
+	<nav role="navigation" id="site-navigation"  class="navbar-primary cascade-level-1" aria-label="<?php _e( 'Top Menu', 'sesha' ); ?>">
+		<?php wp_nav_menu(array(
+			'container' => false,                           // remove nav container
+			'container_class' => '',                 // class of container (should you choose to use it)
+			'menu' => __( 'The Main Menu', 'sesha' ),  // nav name
+			'menu_class' => 'level-1-list menu ',               // adding custom nav class
+			'theme_location' => 'main-nav',                 // where it's located in the theme
+			'before' => '',                                 // before the menu
+			'after' => '',                                  // after the menu
+			'link_before' => '',                            // before each link
+			'link_after' => '',                             // after each link
+			'depth' => 0,                                   // limit the depth of the nav
+			'fallback_cb' => '',                            // fallback function (if there is one)
+			'walker' => new site_navigation_menu()
+		)); ?>
+	</nav>
+</div>

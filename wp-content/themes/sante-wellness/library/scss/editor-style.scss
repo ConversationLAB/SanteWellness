@@ -1,0 +1,26 @@
+/*!
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// Core variables and mixins
+@import "bootstrap-custom/variables";  // Custom
+@import "bootstrap/mixins";
+@import "bootstrap-custom/mixins"; 
+@import "components-custom/fonts";
+
+// Reset and dependencies
+@import "bootstrap/normalize";
+
+// Core CSS
+@import "bootstrap/scaffolding";
+@import "bootstrap-custom/type"; // Custom
+@import "bootstrap/code";
+@import "bootstrap/tables";
+@import "bootstrap-custom/buttons";  // Custom
+
+html .mceContentBody {
+	padding: 20px !important; // Add padding to the editor window
+}
+ 

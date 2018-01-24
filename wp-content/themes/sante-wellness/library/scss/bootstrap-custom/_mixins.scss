@@ -1,0 +1,98 @@
+// Mixins
+// --------------------------------------------------
+
+// Utilities
+@import "../bootstrap/mixins/hide-text";
+@import "../bootstrap/mixins/opacity";
+@import "../bootstrap/mixins/image";
+@import "../bootstrap/mixins/labels";
+@import "../bootstrap/mixins/reset-filter";
+@import "../bootstrap/mixins/resize";
+@import "../bootstrap/mixins/responsive-visibility";
+@import "../bootstrap/mixins/size";
+@import "../bootstrap/mixins/tab-focus";
+@import "../bootstrap/mixins/reset-text";
+@import "../bootstrap/mixins/text-emphasis";
+@import "../bootstrap/mixins/text-overflow";
+@import "../bootstrap/mixins/vendor-prefixes";
+
+// Components
+@import "../bootstrap/mixins/alerts";
+@import "../bootstrap/mixins/buttons";
+@import "../bootstrap/mixins/panels";
+@import "../bootstrap/mixins/pagination";
+@import "../bootstrap/mixins/list-group";
+@import "../bootstrap/mixins/nav-divider";
+@import "../bootstrap/mixins/forms";
+@import "../bootstrap/mixins/progress-bar";
+@import "../bootstrap/mixins/table-row";
+
+// Skins
+@import "../bootstrap/mixins/background-variant";
+@import "../bootstrap/mixins/border-radius";
+@import "../bootstrap/mixins/gradients";
+
+// Layout
+@import "../bootstrap/mixins/clearfix";
+@import "../bootstrap/mixins/center-block";
+@import "../bootstrap/mixins/nav-vertical-align";
+// @import "../bootstrap/mixins/grid-framework";
+// @import "../bootstrap/mixins/grid";
+
+// Font Families
+// -----------------------------------
+@mixin font-face($name, $filename) {
+	@font-face {
+		font-family: $name;
+		src: url('#{$filename}.woff') format('woff');
+		font-style: normal;
+		font-weight: normal;
+		 -webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+@mixin font-face-extended($name, $weight, $style, $filename) {
+	@font-face {
+		font-family: $name;
+		src:url('#{$filename}.woff') format('woff');
+		font-style: $style;
+		font-weight: $weight;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+// Font Sizing
+// -----------------------------------
+@mixin primary-bg() {
+	color: $white;
+	background-color: $brand-primary;	
+}
+
+// create a circle
+// -----------------------------------
+@mixin clearfix() {
+	*zoom: 1;
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+ 
+// Used on the helper classes : menu, menu-horz-block, menu-horz-inline, menu-vert
+@mixin menu-mixin() {
+	margin: 0; 
+	padding: 0; 
+	li {
+		list-style: none;
+	}
+	a {
+		text-decoration: none;
+	}
+}
+
