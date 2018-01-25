@@ -10,7 +10,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-lg-7">
+		<div class="col-lg-7" style="background: #a3b3ba; padding: 10px;">
 
 			<p class="bs-component">
 				<a href="#" class="btn btn-success">Success</a>
@@ -198,7 +198,7 @@
 			</div>
 
 		</div>
-		<div class="col-lg-5">
+		<div class="col-lg-5" style="background: #a3b3ba; padding: 10px;">
 
 			<p class="bs-component">
 				<a href="#" class="btn btn-default btn-lg btn-block">Block level button</a>

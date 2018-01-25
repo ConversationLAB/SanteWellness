@@ -9,5 +9,3 @@ require_once( 'library/mce-custom-styles.php' );
 require_once( 'library/custom-post-type-example.php' );
 // CUSTOMIZER THEME OPTIONS
 require_once( 'library/customizer.php' );
-// CUSTOMIZER THEME OPTIONS EXAMPLES
-require_once( 'library/customizer-examples.php' );

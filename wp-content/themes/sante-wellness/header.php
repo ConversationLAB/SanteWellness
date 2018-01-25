@@ -21,6 +21,53 @@
 	<?php endif; ?>
 	
 	<?php get_template_part('template-parts/header/header', 'head');  ?>
+
+	<?php if( get_option( 'setting_fonts' ) ) : ?>
+	<script>
+	WebFont.load({
+	google: {
+		families: ['<?php echo get_option( 'setting_fonts' ); ?>:<?php echo get_option( 'setting_fonts_weight' ); ?>']
+	}
+	});
+	</script>
+	<?php endif; ?>
+	<?php if( get_option( 'setting_fonts_headings' ) && get_option( 'setting_fonts' ) != get_option( 'setting_fonts_headings' ) ) : ?>
+	<script>
+	WebFont.load({
+	google: {
+		families: ['<?php echo get_option( 'setting_fonts_headings' ); ?>:<?php echo get_option( 'setting_fonts_weight_headings' ); ?>']
+	}
+	});
+	</script>
+	<?php endif; ?>
+
+
+
+	<?php if( get_option( 'setting_fonts' ) ) echo '<style>'; ?>
+		body {
+		<?php if( get_option( 'setting_fonts' ) ) : ?>
+		font-family: <?php echo get_option( 'setting_fonts' ); ?>, sans-serif;
+		<?php endif; ?>
+		<?php if( get_option( 'setting_fonts_weight_body' ) ) : ?>
+		font-weight: <?php echo get_option( 'setting_fonts_weight_body' ); ?>;
+		<?php endif; ?>
+		}
+
+		<?php if( get_option( 'setting_fonts_headings' ) ) : ?>
+		h1, h2, h3, h4, h5, h6,
+		.h1, .h2, .h3, .h4, .h5, .h6 {
+			font-family: <?php echo get_option( 'setting_fonts_headings' ); ?>, sans-serif;
+			font-weight: <?php echo get_option( 'setting_fonts_weight_headings_bold' ); ?>;
+		}
+		.h1-light, .h2-light, .h3-light, .h4-light, .h5-light, .h6-light {
+			font-weight: <?php echo get_option( 'setting_fonts_weight_headings' ); ?>;
+		}
+		<?php endif; ?>
+
+
+
+	<?php if( get_option( 'setting_fonts' ) ) echo '</style>'; ?>
+
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">

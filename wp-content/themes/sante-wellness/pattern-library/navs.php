@@ -169,7 +169,7 @@
 
 
 	<div class="row">
-		<div class="col-lg-4">
+		<div class="col-lg-6">
 			<h2 id="pagination">Pagination</h2>
 			<div class="bs-component">
 				<ul class="pagination">
@@ -239,7 +239,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-lg-6">
 			<h2 id="pager">Pager</h2>
 			<div class="bs-component">
 				<ul class="pager">
@@ -261,8 +261,6 @@
 				</ul>
 			</div>
 		</div>
-		<div class="col-lg-4">
 
-		</div>
 	</div>
 </div>

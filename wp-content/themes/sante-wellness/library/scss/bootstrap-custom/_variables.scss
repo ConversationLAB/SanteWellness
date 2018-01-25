@@ -13,12 +13,13 @@ $transition : cubic-bezier(0.445, 0.050, 0.550, 0.950);
 //## Gray and brand colors for use across Bootstrap.
 
 $black :				#000000;
-$gray-base:     		#555555 !default;
-$gray-darker:   		#65625f !default;
-$gray-dark:         	#8d8a87 !default;
-$gray:              	#beb4ab !default;
-$gray-light:        	#e0dbd6 !default;
-$gray-lighter:      	#efebe7 !default;
+$gray-base:     		#888888 !default;
+
+$gray-darker:   		darken($gray-base, 15%) !default;
+$gray-dark:         	darken($gray-base, 10%) !default;
+$gray:              	$gray-base !default;
+$gray-light:        	lighten($gray-base, 10%) !default;
+$gray-lighter:      	lighten($gray-base, 15%) !default;
 
 
 $red : 		#eb1c23;
@@ -29,6 +30,9 @@ $green: 	#378d5f;
 $magenta: 	#a20e32;
 $peach: 	#f46d71;
 $purple: 	#474052;
+$blue: 		#194d5d;
+$teal: 		#1695ac;
+
 
 $dark-red: 		darken($red, 10%);
 $dark-orange : 	darken($orange, 10%);
@@ -38,16 +42,18 @@ $dark-green: 	darken($green, 10%);
 $dark-magenta: 	darken($magenta, 10%);
 $dark-purple: 	darken($purple, 10%);
 $dark-peach: 	darken($peach, 10%);
+$dark-blue: 	darken($blue, 10%);
+$dark-teal: 	darken($teal, 10%);
 
 $pale-yellow: 	#fff2d5;
 $pale-red: 		#f5c6c8;
 $pale-teal: 	#e8fbff;
 
-$brand-primary:         $purple !default; 
-$brand-primary-alt:     $dark-purple !default; 
+$brand-primary:         $blue !default; 
+$brand-primary-alt:     $dark-blue !default; 
 
-$brand-secondary: 		$peach;
-$brand-secondary-alt: 	$dark-peach;
+$brand-secondary: 		$teal;
+$brand-secondary-alt: 	$dark-teal;
 
 $brand-success:         $green !default;
 $brand-info:            $teal !default;
@@ -91,16 +97,16 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 
-$font-size-base:          14px !default;
-$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
-$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-base:          16px !default;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default;
+$font-size-small:         ceil(($font-size-base * 0.85)) !default;
 
-$font-size-h1:            floor(($font-size-base * 2.8)) !default; // ~36px
-$font-size-h2:            floor(($font-size-base * 2.4)) !default; // ~30px
-$font-size-h3:            ceil(($font-size-base * 1.8)) !default; // ~24px
-$font-size-h4:            ceil(($font-size-base * 1.3)) !default; // ~18px
+$font-size-h1:            floor(($font-size-base * 3)) !default; //48px
+$font-size-h2:            floor(($font-size-base * 2.4)) !default; // 38px
+$font-size-h3:            ceil(($font-size-base * 1.875)) !default; // 30px
+$font-size-h4:            $font-size-base !default;  // 16px
 $font-size-h5:            $font-size-base !default;
-$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-h6:            $font-size-base !default; 
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:        1.428571429 !default; // 20/14
@@ -109,26 +115,9 @@ $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
 
 //** By default, this inherits from the `<body>`.
 $headings-font-family:    inherit !default;
-$headings-font-weight:    500 !default;
+$headings-font-weight:    700 !default;
 $headings-line-height:    1.1 !default;
 $headings-color:          inherit !default;
-
-
-//== Iconography
-//
-//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
-
-//** Load fonts from this directory.
-
-// [converter] If $bootstrap-sass-asset-helper if used, provide path relative to the assets load path.
-// [converter] This is because some asset helpers, such as Sprockets, do not work with file-relative paths.
-$icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/bootstrap/") !default;
-
-//** File name for all font files.
-$icon-font-name:          "glyphicons-halflings-regular" !default;
-//** Element ID within SVG icon file.
-$icon-font-svg-id:        "glyphicons_halflingsregular" !default;
-
 
 //== Components
 //
@@ -136,22 +125,22 @@ $icon-font-svg-id:        "glyphicons_halflingsregular" !default;
 $padding-xs-vertical:       5px !default;
 $padding-xs-horizontal:     8px !default;
 
-$padding-small-vertical:    10px !default;
-$padding-small-horizontal:  20px !default;
+$padding-small-vertical:    2px !default;
+$padding-small-horizontal:  12px !default;
 
-$padding-base-vertical:     10px !default;
-$padding-base-horizontal:   20px !default;
+$padding-base-vertical:     4px !default;
+$padding-base-horizontal:   16px !default;
 
-$padding-large-vertical:    20px !default;
-$padding-large-horizontal:  36px !default;
+$padding-large-vertical:    4px !default;
+$padding-large-horizontal:  30px !default;
 
 
 $line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
 $line-height-small:         1.5 !default;
 
-$border-radius-base:        0 !default;
-$border-radius-large:       0 !default;
-$border-radius-small:       0 !default;
+$border-radius-base:        3px !default;
+$border-radius-large:       3px !default;
+$border-radius-small:       3px !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
 $component-active-color:    $white !default;
@@ -189,11 +178,11 @@ $table-border-color:            #ddd !default;
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-$btn-font-weight:                bold !default; 
+$btn-font-weight:                300; 
 
 $btn-default-color:              $white !default;
-$btn-default-bg:                 $gray-dark !default;
-$btn-default-border:             $gray-dark  !default;
+$btn-default-bg:                 transparent !default;
+$btn-default-border:             $white  !default;
 
 $btn-primary-color:              $white !default;
 $btn-primary-bg:                 $brand-primary !default;
@@ -220,6 +209,8 @@ $btn-danger-bg:                  $brand-danger !default;
 $btn-danger-border:              darken($btn-danger-bg, 5%) !default;
 
 $btn-link-disabled-color:        $gray-light !default;
+
+$btn-border-width: 				2px;
 
 // Allows for customizing button radius independently from global border radius
 $btn-border-radius-base:         $border-radius-base !default;
@@ -432,8 +423,8 @@ $container-lg:                 $container-large-desktop !default;
 //== Header
 //
 //##
-$header-height:                    100px !default; 
-$header-height-reduced:            50px !default; 
+$header-height:                    140px !default; 
+$header-height-reduced:            140px !default; 
 $header-height-mobile:             40px !default; 
 $header-default-bg :				$brand-primary;
 
@@ -455,7 +446,7 @@ $navbar-offset-mobile:            30vw !default;
 
 $navbar-margin-bottom:             $grid-gutter-width !default;
 $navbar-border-radius:             $border-radius-base !default;
-$navbar-padding-horizontal:        8px !default;
+$navbar-padding-horizontal:        4px !default;
 $navbar-padding-vertical:          4px !default;
 
 $navbar-default-color:             $white !default;
@@ -463,13 +454,13 @@ $navbar-default-bg:                $brand-primary !default;
 $navbar-default-border:            $brand-primary-alt !default; 
 
 // Navbar links
-$navbar-default-link-color:                	$peach !default;
+$navbar-default-link-color:                	$white !default;
 $navbar-default-link-bg:                	$navbar-default-bg !default;
-$navbar-default-link-hover-color:          	$yellow !default;
-$navbar-default-link-hover-bg:             	$brand-primary-alt !default;
+$navbar-default-link-hover-color:          	$gray-lighter !default;
+$navbar-default-link-hover-bg:             	$navbar-default-bg !default;
 
-$navbar-default-link-active-color:         	$white !default;
-$navbar-default-link-active-bg:            	$brand-primary-alt;
+$navbar-default-link-active-color:         	$gray-lighter !default;
+$navbar-default-link-active-bg:            	$navbar-default-bg;
 
 $navbar-default-link-disabled-color:       	$gray !default;
 $navbar-default-link-disabled-bg:          	$gray-dark !default;

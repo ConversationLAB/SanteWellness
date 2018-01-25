@@ -2,13 +2,11 @@
 // Typography
 // --------------------------------------------------
 
-
 // Headings
 // -------------------------
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6, 
-.h1-uppercase, .h2-uppercase, .h3-uppercase, .h4-uppercase, .h5-uppercase, .h6-uppercase,
 .h1-light, .h2-light, .h3-light, .h4-light, .h5-light, .h6-light {
   margin: 0;
   font-family: $headings-font-family;
@@ -17,28 +15,25 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 700;
 }
 
-.h1-uppercase, .h2-uppercase, .h3-uppercase, .h4-uppercase, .h5-uppercase, .h6-uppercase {
-	text-transform: uppercase;
-}
 .h1-light, .h2-light, .h3-light, .h4-light, .h5-light, .h6-light {
 	font-weight: 400;
 }
 
-h1, .h1, .h1-uppercase, .h1-light,
-h2, .h2, .h2-uppercase, .h2-light,
-h3, .h3, .h3-uppercase, .h3-light,
-h4, .h4, .h4-uppercase, .h4-light,
-h5, .h5, .h5-uppercase, .h5-light,
-h6, .h6, .h6-uppercase, .h6-light {
-  margin-bottom: ($line-height-computed / 2);
+h1, .h1, .h1-light,
+h2, .h2, .h2-light,
+h3, .h3, .h3-light,
+h4, .h4, .h4-light,
+h5, .h5, .h5-light,
+h6, .h6, .h6-light {
+  margin-bottom: .5em;
 }
 
-h1, .h1, .h1-uppercase, .h1-light { font-size: $font-size-h1; }
-h2, .h2, .h2-uppercase, .h2-light { font-size: $font-size-h2; }
-h3, .h3, .h3-uppercase, .h3-light { font-size: $font-size-h3; }
-h4, .h4, .h4-uppercase, .h4-light { font-size: $font-size-h4; }
-h5, .h5, .h5-uppercase, .h5-light { font-size: $font-size-h5; }
-h6, .h6, .h5-uppercase, .h5-light { font-size: $font-size-h6; }
+h1, .h1, .h1-light { font-size: $font-size-h1; }
+h2, .h2, .h2-light { font-size: $font-size-h2; }
+h3, .h3, .h3-light { font-size: $font-size-h3; }
+h4, .h4, .h4-light { font-size: $font-size-h4; }
+h5, .h5, .h5-light { font-size: $font-size-h5; }
+h6, .h6, .h5-light { font-size: $font-size-h6; }
 
 // Body text
 // -------------------------
