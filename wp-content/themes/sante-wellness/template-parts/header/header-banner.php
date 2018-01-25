@@ -3,6 +3,8 @@
 
 		<?php get_template_part('template-parts/header/site', 'branding');  ?>
 
+		<a href="#" class="btn-book-now-cta btn btn-default btn-lg">Book Now</a>
+
 		<button class="navbar-toggle / js-toggle-offcanvas-menu">
 			<i class="toggle-menu-icon fa fa-bars" aria-hidden="true"></i>
 			<i class="toggle-menu-icon fa fa-times" aria-hidden="true"></i>

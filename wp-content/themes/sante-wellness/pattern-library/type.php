@@ -18,14 +18,41 @@
 				<h2>Heading 2</h2>
 				<h3>Heading 3</h3>
 				<h4>Heading 4</h4>
-				<h5>Heading 5</h5>
-				<h6>Heading 6</h6>
-				<p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+				<!-- <h5>Heading 5</h5>
+				<h6>Heading 6</h6> -->
+
+				<h1 class="text-uppercase">Heading 1</h1>
+				<h2 class="text-uppercase">Heading 2</h2>
+				<h3 class="text-uppercase">Heading 3</h3>
+				<h4 class="text-uppercase">Heading 4</h4>
+				<!-- <h5 class="text-uppercase">Heading 5</h5>
+				<h6 class="text-uppercase">Heading 6</h6> -->
 			</div>
 		</div>
+
+		<div class="col-lg-4">
+			<h1 class="h1-light">Heading 1</h1>
+			<h2 class="h2-light">Heading 2</h2>
+			<h3 class="h3-light">Heading 3</h3>
+			<h4 class="h4-light">Heading 4</h4>
+			<!-- <h5 class="h5-light">Heading 5</h5>
+			<h6 class="h6-light">Heading 6</h6> -->
+
+			<h1 class="h1-light text-uppercase">Heading 1</h1>
+			<h2 class="h2-light text-uppercase">Heading 2</h2>
+			<h3 class="h3-light text-uppercase">Heading 3</h3>
+			<h4 class="h4-light text-uppercase">Heading 4</h4>
+			<!-- <h5 class="h5-light text-uppercase">Heading 5</h5>
+			<h6 class="h6-light text-uppercase">Heading 6</h6>		 -->
+		</div>
+
+
 		<div class="col-lg-4">
 			<div class="bs-component">
 				<h2>Example body text</h2>
+				
+				<p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+				
 				<p>Nullam quis risus eget
 					<a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
 					mus. Nullam id dolor id nibh ultricies vehicula.</p>
@@ -38,18 +65,6 @@
 					<em>rendered as italicized text</em>.</p>
 				<p>An abbreviation of the word attribute is
 					<abbr title="attribute">attr</abbr>.</p>
-			</div>
-
-		</div>
-		<div class="col-lg-4">
-			<div class="bs-component">
-				<h2>Emphasis classes</h2>
-				<p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
-				<p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-				<p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
-				<p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
-				<p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-				<p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
 			</div>
 
 		</div>

@@ -21,6 +21,7 @@
 	<?php endif; ?>
 	
 	<?php get_template_part('template-parts/header/header', 'head');  ?>
+
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">

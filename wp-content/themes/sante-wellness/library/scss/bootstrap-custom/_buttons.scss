@@ -16,15 +16,16 @@
   touch-action: manipulation;
   cursor: pointer;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: none;
+  border: solid $btn-border-width;
   // white-space: nowrap;
   @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $btn-border-radius-base);
   @include user-select(none);
-  transition: background 200ms $transition; 
+  transition: all 200ms $transition; 
+  background: transparent;
 
   &,
   &:active,
-  &.active {
+  &.active { 
     &:focus,
     &.focus {
       @include tab-focus;
@@ -75,27 +76,6 @@ a.btn {
 }
 .btn-secondary {
   @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
-}
-.btn-white {
-  @include button-variant($gray-base, $white, $white);
-}
-.btn-green {
-	@include button-variant($white, $green, $white);	
-}
-.btn-magenta {
-	@include button-variant($white, $magenta, $white);	
-}
-.btn-orange {
-	@include button-variant($white, $orange, $white);	
-}
-.btn-yellow {
-	@include button-variant($orange, $pale-yellow, $orange);	
-}
-.btn-magenta {
-	@include button-variant($white, $magenta, $white);	
-}
-.btn-teal {
-	@include button-variant($white, $teal, $white);	
 }
 
 

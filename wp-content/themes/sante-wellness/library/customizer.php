@@ -150,21 +150,22 @@ function sesha_customize_register($wp_customize){
 		'Open Sans' => 'Open Sans',
 		'Open Sans Condensed' => 'Open Sans Condensed',
 		'PT Sans' => 'PT Sans',
+		'Quicksand' => 'Quicksand',
 		'Roboto' => 'Roboto',
 		'Ubuntu' => 'Ubuntu',
 		'Vollkorn' => 'Vollkorn'
 	);
 
 	$font_weights_array = array(
-		'100' => 'Thin',
-		'200' => 'Extra Light',
+		// '100' => 'Thin',
+		// '200' => 'Extra Light',
 		'300' => 'Light',
 		'400' => 'Regular',
 		'500' => 'Medium',
-		'600' => 'Semi Bold',
+		// '600' => 'Semi Bold',
 		'700' => 'Bold',
-		'800' => 'Extra Bold',
-		'900' => 'Black'
+		// '800' => 'Extra Bold',
+		// '900' => 'Black'
 	);
 
 	$wp_customize->add_section( 'section_fonts', array(
@@ -201,11 +202,24 @@ function sesha_customize_register($wp_customize){
             array(
 				'settings' => 'setting_fonts_weight',
                 'section'  => 'section_fonts',
-				'label'   => __( 'Font Weight', 'sesha' ),
+				'label'   => __( 'Font Weights to load', 'sesha' ),
                 'choices' => $font_weights_array
             )
         )
 	);
+
+	$wp_customize->add_setting('setting_fonts_weight_body', array(
+		'capability' => 'edit_theme_options',
+        'type'       => 'option'
+    ));
+    $wp_customize->add_control('setting_fonts_weight_body', array(
+        'settings' => 'setting_fonts_weight_body',
+		'section'  => 'section_fonts',
+		'priority' => 40,
+		'label' => __( 'Body Copy Weight', 'sesha' ),
+        'type'    => 'select',
+        'choices'    => $font_weights_array	
+	));	
 
 	// Heading Font
 	// ----------------------------------------------------------------------------	
@@ -221,19 +235,7 @@ function sesha_customize_register($wp_customize){
         'label'   => __( 'Font Family for Headings', 'sesha' ),
         'section' => 'section_fonts',
         'type'    => 'select',
-        'choices'    => array(
-            'Arvo' => 'Arvo',
-            'Droid Sans' => 'Droid Sans',
-            'Josefin Slab' => 'Josefin Slab',
-            'Lato' => 'Lato',
-            'Montserrat' => 'Montserrat',
-            'Open Sans' => 'Open Sans',
-            'Open Sans Condensed' => 'Open Sans Condensed',
-            'PT Sans' => 'PT Sans',
-            'Roboto' => 'Roboto',
-            'Ubuntu' => 'Ubuntu',
-            'Vollkorn' => 'Vollkorn'
-        )
+        'choices' =>  $fonts_array
 	));
 
 	// Heading Font Weight
@@ -247,6 +249,21 @@ function sesha_customize_register($wp_customize){
 		'section'  => 'section_fonts',
 		'priority' => 40,
 		'label' => __( 'Headings Font Weight', 'sesha' ),
+        'type'    => 'select',
+        'choices'    => $font_weights_array	
+	));
+
+	// Heading Font Weight
+	// ----------------------------------------------------------------------------	
+    $wp_customize->add_setting('setting_fonts_weight_headings_bold', array(
+		'capability' => 'edit_theme_options',
+        'type'       => 'option'
+    ));
+    $wp_customize->add_control('setting_fonts_weight_headings_bold', array(
+        'settings' => 'setting_fonts_weight_headings_bold',
+		'section'  => 'section_fonts',
+		'priority' => 40,
+		'label' => __( 'Headings Bold Font Weight', 'sesha' ),
         'type'    => 'select',
         'choices'    => $font_weights_array	
 	));
@@ -305,10 +322,45 @@ add_action( 'wp_head' , 'sesha_dynamic_css' );
 // ----------------------------------------------------------------------------
 function sesha_dynamic_css() {
 ?>   
+
+
+<?php if( get_option( 'setting_fonts' ) ) : ?>
+	<script>
+	WebFont.load({
+	google: {
+		families: ['<?php echo get_option( 'setting_fonts' ); ?>:<?php echo get_option( 'setting_fonts_weight' ); ?>']
+	}
+	});
+	</script>
+	<?php endif; ?>
+
+	<?php if( get_option( 'setting_fonts_headings' ) && get_option( 'setting_fonts' ) != get_option( 'setting_fonts_headings' ) ) : ?>
+	<script>
+	WebFont.load({
+	google: {
+		families: ['<?php echo get_option( 'setting_fonts_headings' ); ?>:<?php echo get_option( 'setting_fonts_weight_headings' ); ?>']
+	}
+	});
+	</script>
+<?php endif; ?>
+
 <style id="customiser-styles">
-.jumbotron {
-	color: #<?php echo get_header_textcolor() ?>;
-}
+	.jumbotron {
+		color: #<?php echo get_header_textcolor() ?>;
+	}
+	body {
+		font-family: <?php echo get_option( 'setting_fonts' ); ?>, sans-serif;
+		font-weight: <?php echo get_option( 'setting_fonts_weight_body' ); ?>;
+	}
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		font-family: <?php echo get_option( 'setting_fonts_headings' ); ?>, sans-serif;
+		font-weight: <?php echo get_option( 'setting_fonts_weight_headings_bold' ); ?>;
+	}
+	.h1-light, .h2-light, .h3-light, .h4-light, .h5-light, .h6-light {
+		font-weight: <?php echo get_option( 'setting_fonts_weight_headings' ); ?>;
+	}
+
 </style>
 <?php
 }
