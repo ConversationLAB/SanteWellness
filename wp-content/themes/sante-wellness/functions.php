@@ -11,4 +11,3 @@ require_once( 'library/custom-post-type-example.php' );
 require_once( 'library/customizer.php' );
 // CUSTOMIZER THEME OPTIONS EXAMPLES
 require_once( 'library/customizer-examples.php' );
-// test

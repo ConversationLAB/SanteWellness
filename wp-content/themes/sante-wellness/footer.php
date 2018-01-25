@@ -14,21 +14,6 @@
 	<h1 class="sr-only">Footer</h1>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-6 baseline-sm">
-				<?php wp_nav_menu(array(
-					'container' => false,                           // remove nav container
-					'container_class' => '',                 // class of container (should you choose to use it)
-					'menu' => __( 'The Footer Menu', 'sesha' ),  // nav name
-					'menu_class' => 'footer__menu / menu-horz-flex',               // adding custom nav class
-					'before' => '',                                 // before the menu
-					'after' => '',                                  // after the menu
-					'link_before' => '',                            // before each link
-					'link_after' => '',                             // after each link
-					'depth' => 0,                                   // limit the depth of the nav
-					'fallback_cb' => '',                            // fallback function (if there is one)
-					'walker' => new site_footer_menu()
-				)); ?>
-			</div>
 
 			<div class="col-sm-6 baseline-sm">
 				<div class="footer-social-media__wrapper / text-center">
@@ -104,10 +89,6 @@
 <div class="page-wrapper-overlay"></div>
 
 <?php wp_footer(); ?>
-
-<!--[if lte IE 9]>
-<?php get_template_part( 'template-parts/_legacy-ie', 'message' ); ?>
-<![endif]-->
 
 </body>
 </html>
