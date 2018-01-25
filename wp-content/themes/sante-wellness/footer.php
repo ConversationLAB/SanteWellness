@@ -8,7 +8,7 @@
 */
 
 ?>
-<?php get_sidebar(); ?>
+<?php get_sidebar(); // test ?>
 
 <footer id="site-footer" class="site-footer / has-menu-animation  clearfix" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 	<h1 class="sr-only">Footer</h1>
