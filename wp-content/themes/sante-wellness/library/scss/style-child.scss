@@ -43,7 +43,7 @@
 @import "bootstrap/pager";
 @import "bootstrap/labels";
 @import "bootstrap/badges";
-@import "bootstrap-custom/jumbotron"; // Custom 
+// @import "bootstrap-custom/jumbotron"; // Custom 
 @import "bootstrap/thumbnails";
 @import "bootstrap/alerts"; 
 @import "bootstrap/progress-bars";
@@ -60,19 +60,20 @@
 @import "bootstrap/popovers"; 
  
 // Custom Components
-@import "components-custom/blog-post-listing";
-@import "components-custom/blog-single-post"; 
-@import "components-custom/blog-sidebar"; 
-@import "components-custom/blog-comments"; 
+// @import "components-custom/blog-post-listing";
+// @import "components-custom/blog-single-post"; 
+// @import "components-custom/blog-sidebar"; 
+// @import "components-custom/blog-comments"; 
+@import "components-custom/slick";
+@import "components-custom/slideshow-banner";
 @import "components-custom/scaffolding";
 @import "components-custom/homepage";
 @import "components-custom/search"; 
 @import "components-custom/accordion";
 @import "components-custom/contact";
-@import "components-custom/slick";
-@import "components-custom/_404";
-@import "components-custom/_pagination"; 
-@import "components-custom/_social-share-icons";
+@import "components-custom/404";
+@import "components-custom/pagination"; 
+@import "components-custom/social-share-icons";
  
 // Utility classes 
 @import "bootstrap-custom/utilities";  // Custom

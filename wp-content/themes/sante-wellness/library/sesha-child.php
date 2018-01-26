@@ -19,13 +19,6 @@ function launch_sesha_child() {
 }
 
 
-// Declare WooCommerce Support
-// -------------------------------------------------------------------------------
-add_action( 'after_setup_theme', 'woocommerce_support' );
-function woocommerce_support() {
-    add_theme_support( 'woocommerce' );
-}
-
 
 // Set Google API key for maps
 // -------------------------------------------------------------------------------
@@ -70,35 +63,6 @@ function sesha_theme_support_child() {
 		'admin-head-callback'    => '',
 		'admin-preview-callback' => ''
 	) );
-
-	add_theme_support( 'custom-header', array(
-		'default-image'          => get_stylesheet_directory_uri() . '/library/images/header-default.jpg',
-		'width'                  => 1280,
-		'height'                 => 400,
-		'flex-height'            => true,
-		'flex-width'             => true,
-		'uploads'                => true,
-		'random-default'         => false,
-		'header-text'            => true,
-		'default-text-color'     => '',
-		'wp-head-callback'       => '',
-		'admin-head-callback'    => '',
-		'admin-preview-callback' => '',
-	));
-
-	register_default_headers( array(
-		'sunset' => array(
-				'url'           => get_stylesheet_directory_uri() . '/library/images/header-01.jpg',
-				'thumbnail_url' => get_stylesheet_directory_uri() . '/library/images/header-01.jpg',
-				'description'   => 'Header Image',
-		),
-		'flower' => array(
-				'url'           => get_stylesheet_directory_uri() . '/library/images/header-02.jpg',
-				'thumbnail_url' => get_stylesheet_directory_uri() . '/library/images/header-02.jpg',
-				'description'   => 'Header Image',
-		),  
-	));
-
 
 	// Add theme support for Custom Logo.
 	add_theme_support( 'custom-logo', array(

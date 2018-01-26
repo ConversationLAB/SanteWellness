@@ -49,9 +49,9 @@ var SBchild = {
             "infinite": true,
             "draggable": true,
             "slidesToShow": 1,
-            "autoplay": true,
-            "nextArrow": '<button type="button" class="slick-arrow slick-next"><i class="icon-chevron-right"></i></button>',
-            "prevArrow": '<button type="button" class="slick-arrow slick-prev"><i class="icon-chevron-left"></i></button>'
+            "autoplay": false,
+            "nextArrow": '<button type="button" class="slick-arrow slick-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>',
+            "prevArrow": '<button type="button" class="slick-arrow slick-prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>'
         });
 
 

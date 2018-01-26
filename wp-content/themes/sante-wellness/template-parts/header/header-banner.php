@@ -16,12 +16,42 @@
 
 </header>
 
-<div class="jumbotron has-menu-animation" style="background-image: url('<?php header_image(); ?>')">
-	<div class="container" >
-		<h1><?php bloginfo( 'name' ) ?></h1>
-		<p><?php bloginfo( 'description' ) ?></p>
+
+
+<?php 
+if( have_rows('slideshow_banner') ): ?>
+
+	<div class="slideshow__banner / js-slideshow">
+
+	<?php while( have_rows('slideshow_banner') ): the_row(); 
+		$image = get_sub_field('slideshow_image');
+		$title = get_sub_field('slideshow_title');
+		$link = get_sub_field('slideshow_link');
+		$color = 'style=" color: '. get_sub_field('slideshow_text_colour') .';"';
+		$position = 'data-slideshow-text-position="'. get_sub_field('slideshow_text_position') . '"';
+	?>
+
+		<a href="<?php echo $link; ?>" class="slideshow__banner-slide" style="background-image: url(<?php echo $image['url']; ?>) ">
+
+			<?php if( $title ): ?>
+				<div class="container relative">
+				
+					<header class="slideshow__banner-title-wrapper" <?php echo $position; ?>>
+						<h2 class="slideshow__banner-title / h1-light baseline-none" <?php echo $color; ?>>
+							<?php echo $title; ?>
+						</h2>
+					</header>
+
+				</div>
+			<?php endif; ?>	
+		    
+		</a>
+
+	<?php endwhile; ?>
+
 	</div>
-</div>
+
+<?php endif; ?>
 
 <?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
 <div class="container has-menu-animation">
