@@ -355,10 +355,10 @@ function sesha_dynamic_css() {
 	h1, h2, h3, h4, h5, h6,
 	.h1, .h2, .h3, .h4, .h5, .h6 {
 		font-family: <?php echo get_option( 'setting_fonts_headings' ); ?>, sans-serif;
-		font-weight: <?php echo get_option( 'setting_fonts_weight_headings_bold' ); ?>;
-	}
-	.h1-light, .h2-light, .h3-light, .h4-light, .h5-light, .h6-light {
 		font-weight: <?php echo get_option( 'setting_fonts_weight_headings' ); ?>;
+	}
+	.h1-heavy, .h2-heavy, .h3-heavy, .h4-heavy, .h5-heavy, .h6-heavy {
+		font-weight: <?php echo get_option( 'setting_fonts_weight_headings_bold' ); ?>;
 	}
 
 </style>

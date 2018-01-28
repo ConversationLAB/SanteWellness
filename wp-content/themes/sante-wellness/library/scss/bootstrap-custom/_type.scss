@@ -12,11 +12,11 @@ h1, h2, h3, h4, h5, h6,
   font-family: $headings-font-family;
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
-  font-weight: 700;
+  font-weight: 400;
 }
 
-.h1-light, .h2-light, .h3-light, .h4-light, .h5-light, .h6-light {
-	font-weight: 400;
+.h1-heavy, .h2-heavy, .h3-heavy, .h4-heavy, .h5-heavy, .h6-heavy {
+	font-weight: 700;
 }
 
 h1, .h1, .h1-light,
@@ -39,7 +39,7 @@ h6, .h6, .h5-light { font-size: $font-size-h6; }
 // -------------------------
 
 p {
-  margin: 0 0 ($line-height-computed * 2);
+  margin: 0 0 $line-height-computed;
 }
 
 .lead {

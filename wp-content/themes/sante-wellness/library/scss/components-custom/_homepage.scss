@@ -1,2 +1,23 @@
 // Homepage
 // ---------------------------------------------
+.landing__block-wrapper {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $teal;
+    background-position: top right;
+    padding: $padding-md;
+    color: $blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: $baseline-sm;
+    min-height: 35vh;
+
+    &.is-alternate {
+        color: $white; 
+
+        .landing__block-buttons {
+            text-align: right;
+        }
+    } 
+}
