@@ -108,6 +108,13 @@ $font-size-h4:            $font-size-base !default;  // 16px
 $font-size-h5:            $font-size-base !default;
 $font-size-h6:            $font-size-base !default; 
 
+$font-size-h1-mobile:            floor(($font-size-base * 2.5)) !default;
+$font-size-h2-mobile:            floor(($font-size-base * 2)) !default;
+$font-size-h3-mobile:            ceil(($font-size-base * 1.6)) !default;
+$font-size-h4-mobile:            $font-size-base !default; 
+$font-size-h5-mobile:            $font-size-base !default;
+$font-size-h6-mobile:            $font-size-base !default; 
+
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:        1.428571429 !default; // 20/14
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
@@ -425,14 +432,14 @@ $container-lg:                 $container-large-desktop !default;
 //##
 $header-height:                    140px !default; 
 $header-height-reduced:            140px !default; 
-$header-height-mobile:             40px !default; 
+$header-height-mobile:             60px !default; 
 $header-default-bg :				$brand-primary;
 
 
 //== Footer
 //
 //##
-$footer-height : 					250px !default;
+$footer-height : 					300px !default;
 
 
 //== Navbar

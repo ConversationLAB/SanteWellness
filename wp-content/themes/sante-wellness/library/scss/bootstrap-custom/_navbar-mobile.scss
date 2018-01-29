@@ -42,8 +42,8 @@ body {
 // Site logo
 // =======================================================
 .navbar-brand-wrapper {
-	width: 200px;
-	float: left;
+	width: 150px;
+	margin: 5px auto 0;	
 }
 	.custom-logo {
 		
@@ -52,6 +52,9 @@ body {
 // Navbar Toggle button
 // =======================================================
 .navbar-toggle {
+	position: absolute;
+	left: 0;
+	top: 0;
 	padding: 0;
 	background-color: $navbar-default-toggle-bg;	
 	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
@@ -61,7 +64,7 @@ body {
 	font-size: 30px;
 	color: $navbar-default-toggle-icon-bar-bg; 
 	text-align: center;
-	float: right;
+	
 
 	.fa-times {
 		display: none;
@@ -76,6 +79,11 @@ body {
 		display: none;
 	}
 }	
+
+
+.btn-book-now-cta {
+	display: none;
+}
 
 
 // Navigation Menus
@@ -159,7 +167,7 @@ body {
 	font-weight: bold;
 	text-align: left;
 	color: $navbar-default-link-color;
-	padding: 12px $navbar-padding-horizontal;
+	padding: 12px 20px;
 	border-bottom: solid 1px $brand-primary-alt;
 }
 

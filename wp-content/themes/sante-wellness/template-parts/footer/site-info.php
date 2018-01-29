@@ -10,6 +10,18 @@
 
 ?>
 
-<div class="site-info / small text-center  baseline-sm">
-	&copy; <?php bloginfo( 'name' );  ?> <?php echo date('Y'); ?>
-</div><!-- .site-info -->
+<p class="site-info / text-center">
+	Contact: <a href="mailto:<?php echo get_option( 'setting_contact_email' ) ?>">
+		<?php echo get_option( 'setting_contact_email' ) ?>
+	</a> 
+	<span class="visible-lg-inline-block visible-sm-inline-block visible-md-inline-block">
+	| </span>
+
+	<br class="visible-xs-block">
+
+	
+	Call: 
+	<a href="tel:<?php echo str_replace(' ','', get_option( 'setting_contact_number' ) ) ?>">
+		<?php echo get_option( 'setting_contact_number' ); ?>
+	</a> 
+</p>

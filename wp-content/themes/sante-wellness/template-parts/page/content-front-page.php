@@ -30,7 +30,7 @@ if( have_rows('landing_blocks') ):
 	
 		if($row_index%2 == 0) {
 			if($column_index%2 == 0) {
-				$col = 'col-md-8 col-lg-8';
+				$col = 'is-main / col-md-8 col-lg-8';
 				$h_class = 'h1';
 			} else {
 				$col = 'is-alternate / col-md-4 col-lg-4';
@@ -41,7 +41,7 @@ if( have_rows('landing_blocks') ):
 				$col = 'is-alternate / col-md-4 col-lg-4';
 				$h_class = 'h2';
 			} else {
-				$col = 'col-md-8 col-lg-8';
+				$col = 'is-main / col-md-8 col-lg-8';
 				$h_class = 'h1';
 			}		
 		}

@@ -1,15 +1,3 @@
-// html.js {	
-// 	// opacity: 0;
-
-// 	// &.wf-loading {}
-
-// 	// &.wf-active {
-// 	// 	opacity: 1;
-// 	// }
-// }
-
-
-
 .site-content {
 	min-height: calc(100vh - #{$header-height} - #{$footer-height}  - #{$jumbotron-height});
 	padding-bottom: $baseline-md;
@@ -20,47 +8,45 @@
 // Footer
 // ----------------------------------------------------------------
 .site-footer {
-	padding-top: $padding-sm;
-	min-height: $footer-height;
-}
-
-.footer-social-media__menu {
-	li {
-		margin: 0 4px;
-	}
-	.fa {
-		font-size: 40px;
-	}
-}
-
-
-
-.footer__menu {
-	justify-content: center;
-	li {
-		margin: 0 5px;
-	}
-}
-
-
-
-.footer__logo {
-
-}
-
-.site-footer {
-	background: $gray-darker;
-	color: $gray;
+	background: $blue;
+	color: $white;
+	border-top: solid 1px $white;
 	a {
 		color: $white;
+	}	
+
+}
+
+
+@media (min-width: $grid-float-breakpoint) {
+	.site-footer {
+		min-height: $footer-height;
+		padding-top: $footer-height/2;
 	}
 }
 
+@media (max-width: $grid-float-breakpoint-max) {
+	.site-footer {
+		padding: $padding-sm 0;
+	}
+} 
 
-.site-info {
-	border-top: solid 1px $gray-lighter;
-	padding-top: $padding-xs;
-}
+// .footer-social-media__menu {
+// 	li {
+// 		margin: 0 4px;
+// 	}
+// 	.fa {
+// 		font-size: 40px;
+// 	}
+// }
+
+// .footer__menu {
+// 	justify-content: center;
+// 	li {
+// 		margin: 0 5px;
+// 	}
+// }
+
 
 
 // Youtube responsive

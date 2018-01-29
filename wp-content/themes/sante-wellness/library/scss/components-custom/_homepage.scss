@@ -15,9 +15,26 @@
 
     &.is-alternate {
         color: $white; 
+		padding-right: $padding-md;
 
         .landing__block-buttons {
             text-align: right;
         }
     } 
+}
+
+	.btn-landing {
+		margin-bottom: $baseline-xs;
+	}
+
+@media (min-width: $grid-float-breakpoint) {
+	.landing__block-content {
+		.is-main & {
+			padding-right: 340px;
+		}
+	}
+}
+
+@media (max-width: $grid-float-breakpoint-max) {
+	.landing__block-buttons {}
 }
