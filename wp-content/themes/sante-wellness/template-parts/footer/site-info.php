@@ -10,7 +10,7 @@
 
 ?>
 
-<p class="site-info / text-center">
+<p class="site-info small / text-center">
 	Contact: <a href="mailto:<?php echo get_option( 'setting_contact_email' ) ?>">
 		<?php echo get_option( 'setting_contact_email' ) ?>
 	</a> 
