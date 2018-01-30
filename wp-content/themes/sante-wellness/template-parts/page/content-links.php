@@ -4,7 +4,7 @@
 		<?php foreach ( $page_links as $post ) : setup_postdata( $post ); ?>
 
 			<a class="pagelink__link" href="<?php the_permalink(); ?>">
-				<span class="pagelink__title text-uppercase h3-heavy baseline-none">
+				<span class="pagelink__title text-uppercase h3 baseline-none">
 					<?php the_title(); ?>
 				</span>
 

@@ -19,19 +19,33 @@
 
 	.subnav__button {
 		padding: 10px 4px;
+		&:hover {
+			background-color: $brand-primary;
+			color: $white;			
+		}
 	}
 
-	&.current_page_item,
-	&:hover {
-		.subnav__button {
+	&.current_page_item {
+		> .subnav__button {
 			background-color: $brand-primary;
 			color: $white;
 		}
 	}
-	&.current_page_item .subnav__button {
+	&.current_page_item>.subnav__button {
 		cursor: default;
 	}
+
+	.subnav__sub-menu {
+		margin-top: $baseline-xs;
+		margin-left: $baseline-sm;
+
+		.subnav__button {
+			padding: 4px;
+		}
+	} 
 }
+
+
 
 
 // Page Links
