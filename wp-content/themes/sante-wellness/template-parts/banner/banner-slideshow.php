@@ -9,7 +9,7 @@ if ( is_page() && $post->post_parent ) {
 
 if( have_rows('slideshow_banner', $postID) ) : ?>
 
-<div class="slideshow__banner / js-slideshow">
+<div class="slideshow__banner / js-slideshow has-menu-animation">
 
 	<?php while( have_rows('slideshow_banner', $postID) ): the_row(); 
 		$image = get_sub_field('slideshow_image', $postID);

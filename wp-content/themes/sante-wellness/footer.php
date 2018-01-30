@@ -11,7 +11,7 @@
 <?php get_sidebar(); ?>
 
 
-<div class="container__wrapper">
+<div class="container__wrapper has-menu-animation">
 	<div class="container">
 		<?php get_template_part( 'template-parts/page/content', 'links' ); ?>
 	</div>
@@ -19,12 +19,9 @@
 
 <footer id="site-footer" class="site-footer / has-menu-animation  clearfix" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 	<h1 class="sr-only">Footer</h1>
-	<div class="container">
-		
+	<div class="container">	
 		<?php get_template_part('template-parts/header/site', 'branding');  ?>
-
 		<?php get_template_part( 'template-parts/footer/site', 'info' ); ?>
-
 
 		<div class="footer-social-media__wrapper / text-center">
 			<ul class="footer-social-media__menu menu-horz-inline / baseline-xs">
@@ -87,9 +84,9 @@
 			</ul>
 		</div>				
 
-	</div> <!-- END .container -->
-
+	</div>
 </footer>
+
 <div class="page-wrapper-overlay"></div>
 
 <?php wp_footer(); ?>
