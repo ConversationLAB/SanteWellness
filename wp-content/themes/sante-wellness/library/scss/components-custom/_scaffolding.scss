@@ -2,11 +2,15 @@
 // ----------------------------------------------------------------
 .site-content {
 	min-height: calc(100vh - #{$header-height} - #{$footer-height}  - #{$jumbotron-height});
-	padding-bottom: $baseline-md;
+	// padding-bottom: $baseline-md;
 	padding-top: $baseline-md;
 }
 
 
+.container__wrapper {
+	background-color: $dark-blue;
+}
+  
 
 // Sidebar
 // ----------------------------------------------------------------
@@ -17,14 +21,64 @@
 		padding: 10px 4px;
 	}
 
-	&.current_page_item {
+	&.current_page_item,
+	&:hover {
 		.subnav__button {
 			background-color: $brand-primary;
 			color: $white;
-			cursor: default;
 		}
 	}
+	&.current_page_item .subnav__button {
+		cursor: default;
+	}
 }
+
+
+// Page Links
+// ----------------------------------------------------------------
+.pagelink__wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+	.pagelink__link {
+		position: relative;
+		max-width: 50%;	
+		@media (min-width: $screen-xs-max) {
+			max-width: 33.333333%;
+		}		
+		&:hover {
+			.pagelink__title {
+				background-color: rgba(176,194,200,.75);
+				color: $blue;
+			}
+		}
+
+		&:first-of-type {
+			.pagelink__title {
+				border-left-width: 1px;
+			}
+		}
+	} 
+		.pagelink__title {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			
+			background-color: fade-out($blue, .34);			
+			color: $white;
+			border: solid 1px rgba(255,255,255, .25); 
+			border-width: 0 1px 0 0;
+			transition: background $transition 200ms;
+		}
+ 
+			.pagelink__thumbnail {}
 
 	
 
@@ -33,8 +87,7 @@
 // ----------------------------------------------------------------
 .site-footer {
 	background: $blue;
-	color: $white;
-	border-top: solid 1px $white;
+	color: $white;	
 	a {
 		color: $white;
 	}

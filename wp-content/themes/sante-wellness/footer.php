@@ -10,6 +10,13 @@
 ?>
 <?php get_sidebar(); // test ?>
 
+
+<div class="container__wrapper">
+	<div class="container">
+		<?php get_template_part( 'template-parts/page/content', 'links' ); ?>
+	</div>
+</div>
+
 <footer id="site-footer" class="site-footer / has-menu-animation  clearfix" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 	<h1 class="sr-only">Footer</h1>
 	<div class="container">
