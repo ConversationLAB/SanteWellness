@@ -7,11 +7,9 @@
 	.logged-in & {
 		top: $wordpress-admin-bar-height;
 	}
-
 	.has-reduced-menu & {
 		height: $header-height-reduced;
 	}
-
 	.container {
 		position: relative;
 	}

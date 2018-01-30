@@ -12,12 +12,9 @@
 
 if ( is_page() && $post->post_parent ) {
 	$is_parent = true;
-	// $postID = wp_get_post_parent_id( $post_ID );
-
 	$ancestors = get_post_ancestors($post->ID);
 	$root = count($ancestors)-1;
 	$postID = $ancestors[$root];	
-
 } else {
 	$is_parent = false;
 	$postID = get_the_ID();

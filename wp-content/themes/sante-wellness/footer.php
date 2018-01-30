@@ -8,8 +8,9 @@
 */
 
 ?>
-<?php get_sidebar(); ?>
 
+	</div>
+</main>
 
 <div class="container__wrapper has-menu-animation">
 	<div class="container">

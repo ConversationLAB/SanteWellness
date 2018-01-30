@@ -1,7 +1,10 @@
 <?php
 if ( is_page() && $post->post_parent ) {
 	$is_parent = true;
-	$postID = wp_get_post_parent_id( $post_ID );
+	$ancestors = get_post_ancestors($post->ID);
+	$root = count($ancestors)-1;
+	$postID = $ancestors[$root];	
+
 } else {
 	$is_parent = false;
 	$postID = get_the_ID();
@@ -12,10 +15,8 @@ if( have_rows('slideshow_banner', $postID) ) : ?>
 <div class="slideshow__banner / js-slideshow has-menu-animation">
 
 	<?php while( have_rows('slideshow_banner', $postID) ): the_row(); 
-		$image = get_sub_field('slideshow_image', $postID);
-		
+		$image = get_sub_field('slideshow_image', $postID);		
 		$title = get_sub_field('slideshow_title', $postID);
-
 		$link = get_sub_field('slideshow_link', $postID);
 		$color = 'style=" color: '. get_sub_field('slideshow_text_colour', $postID) .';"';
 		$position = 'data-slideshow-text-position="'. get_sub_field('slideshow_text_position', $postID) . '"';

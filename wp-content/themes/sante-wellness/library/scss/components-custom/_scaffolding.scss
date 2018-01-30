@@ -1,8 +1,7 @@
 // Main Content
 // ----------------------------------------------------------------
 .site-content {
-	min-height: calc(100vh - #{$header-height} - #{$footer-height}  - #{$jumbotron-height});
-	// padding-bottom: $baseline-md;
+	min-height: calc(100vh - #{$header-height} - #{$footer-height}  - #{$slideshow_height});
 	padding-top: $baseline-md;
 }
 

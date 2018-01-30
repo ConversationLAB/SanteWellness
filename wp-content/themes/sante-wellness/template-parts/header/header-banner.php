@@ -22,18 +22,12 @@ $book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
 
 </header>
 
-<h1 class="sr-only">
-	<?php echo get_bloginfo('name') ?>
-</h1>
-
 <?php get_template_part('template-parts/banner/banner', 'slideshow');  ?>
-
-<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
-<div class="container has-menu-animation">
-	<div class="row">
-		<main id="site-content" class="site-content / clearfix col" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-<?php else : ?>
 
 <main id="site-content" class="site-content / has-menu-animation clearfix" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 	<div class="container">
-<?php endif; ?>
+
+<h1 class="sr-only">
+	<?php the_title() ?>
+</h1>
+	
