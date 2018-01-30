@@ -1,5 +1,5 @@
 <?php 
-	$book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
+$book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
 ?>
 
 <header id="site-header" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
@@ -22,42 +22,11 @@
 
 </header>
 
+<h1 class="sr-only">
+	<?php echo get_bloginfo('name') ?>
+</h1>
 
-
-<?php 
-if( have_rows('slideshow_banner') ): ?>
-
-	<div class="slideshow__banner / js-slideshow">
-
-	<?php while( have_rows('slideshow_banner') ): the_row(); 
-		$image = get_sub_field('slideshow_image');
-		$title = get_sub_field('slideshow_title');
-		$link = get_sub_field('slideshow_link');
-		$color = 'style=" color: '. get_sub_field('slideshow_text_colour') .';"';
-		$position = 'data-slideshow-text-position="'. get_sub_field('slideshow_text_position') . '"';
-	?>
-
-		<a href="<?php echo $link; ?>" class="slideshow__banner-slide" style="background-image: url(<?php echo $image['url']; ?>) ">
-
-			<?php if( $title ): ?>
-				<div class="container relative">
-				
-					<header class="slideshow__banner-title-wrapper" <?php echo $position; ?>>
-						<h2 class="slideshow__banner-title / h1-light baseline-none" <?php echo $color; ?>>
-							<?php echo $title; ?>
-						</h2>
-					</header>
-
-				</div>
-			<?php endif; ?>	
-		    
-		</a>
-
-	<?php endwhile; ?>
-
-	</div>
-
-<?php endif; ?>
+<?php get_template_part('template-parts/banner/banner', 'slideshow');  ?>
 
 <?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
 <div class="container has-menu-animation">

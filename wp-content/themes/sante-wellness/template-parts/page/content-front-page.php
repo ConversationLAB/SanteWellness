@@ -24,35 +24,33 @@ if( have_rows('landing_blocks') ):
 	<div class="row baseline-grid">
 
 	<?php while( have_rows('landing_blocks') ): the_row();
-	
-	// echo 'row: '. $row_index;
-	// echo 'col: '. $column_index;
-	
-		if($row_index%2 == 0) {
-			if($column_index%2 == 0) {
-				$col = 'is-main / col-md-8 col-lg-8';
-				$h_class = 'h1';
-			} else {
-				$col = 'is-alternate / col-md-4 col-lg-4';
-				$h_class = 'h2';
-			}			
-		} else {
-			if($column_index%2 == 0) {
-				$col = 'is-alternate / col-md-4 col-lg-4';
-				$h_class = 'h2';
-			} else {
-				$col = 'is-main / col-md-8 col-lg-8';
-				$h_class = 'h1';
-			}		
-		}
-
-
-
 		$title = get_sub_field('landing_title');
 		$content = get_sub_field('landing_text');
 		$image = 'style="background-image: url('. get_sub_field('landing_image')['url']. '); "';
 		$buttons = get_sub_field('landing_buttons');
 		?>
+		<?php
+			if($row_index%2 == 0) {
+				if($column_index%2 == 0) {
+					$col = 'is-main / col-md-8 col-lg-8';
+					$h_class = 'h1';
+				} else {
+					$col = 'is-alternate / col-md-4 col-lg-4';
+					$h_class = 'h2';
+				}			
+			} else {
+				if($column_index%2 == 0) {
+					$col = 'is-alternate / col-md-4 col-lg-4';
+					$h_class = 'h2';
+				} else {
+					$col = 'is-main / col-md-8 col-lg-8';
+					$h_class = 'h1';
+				}		
+			}	
+		?>
+
+
+
 
 		<div class="landing__block-wrapper / <?php echo $col; ?>" <?php echo $image; ?>>
 
@@ -86,8 +84,8 @@ if( have_rows('landing_blocks') ):
 
 
 	<?php 
+	if($column_index%2 == 0) $row_index++; 
 	$column_index++;
-	if($column_index%3 == 0) $row_index++; 
 	endwhile; 
 	?>
 

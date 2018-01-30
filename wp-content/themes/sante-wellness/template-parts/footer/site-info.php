@@ -10,6 +10,13 @@
 
 ?>
 
+<p class="site-info / small text-center">
+	&copy; <?php echo date('Y'); ?>
+</p>
+
+
+
+<!-- 
 <p class="site-info small / text-center">
 	Contact: <a href="mailto:<?php echo get_option( 'setting_contact_email' ) ?>">
 		<?php echo get_option( 'setting_contact_email' ) ?>
@@ -25,3 +32,4 @@
 		<?php echo get_option( 'setting_contact_number' ); ?>
 	</a> 
 </p>
+-->

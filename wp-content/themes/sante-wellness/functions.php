@@ -9,3 +9,5 @@ require_once( 'library/mce-custom-styles.php' );
 require_once( 'library/custom-post-type-example.php' );
 // CUSTOMIZER THEME OPTIONS
 require_once( 'library/customizer.php' );
+// CUSTOM CHILD PAGES MENU
+require_once( 'library/custom-wp-sub-menu.php' );

@@ -1,8 +1,32 @@
+// Main Content
+// ----------------------------------------------------------------
 .site-content {
 	min-height: calc(100vh - #{$header-height} - #{$footer-height}  - #{$jumbotron-height});
 	padding-bottom: $baseline-md;
 	padding-top: $baseline-md;
 }
+
+
+
+// Sidebar
+// ----------------------------------------------------------------
+.subnav__menu-item {
+	margin-bottom: $baseline-xs;
+
+	.subnav__button {
+		padding: 10px 4px;
+	}
+
+	&.current_page_item {
+		.subnav__button {
+			background-color: $brand-primary;
+			color: $white;
+			cursor: default;
+		}
+	}
+}
+
+	
 
 
 // Footer

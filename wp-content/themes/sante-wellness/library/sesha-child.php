@@ -19,7 +19,6 @@ function launch_sesha_child() {
 }
 
 
-
 // Set Google API key for maps
 // -------------------------------------------------------------------------------
 function sesha_after_acf_init() {

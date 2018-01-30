@@ -10,11 +10,6 @@
 
 get_header(); ?>
 
-<h1 class="sr-only">
-	<?php echo get_bloginfo('name') ?>
-</h1>
-
-
 <?php // Show the selected frontpage content.
 if ( have_posts() ) :
 	while ( have_posts() ) : the_post();
