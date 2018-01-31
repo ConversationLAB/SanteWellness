@@ -2,13 +2,11 @@
 // =======================================================
 .site-header {
 	background-color: $header-default-bg;
-
 	top: 0;
 	left: 0;
 	right: 0;
 	position: fixed;	
-	z-index: $zindex-header;
-	
+	z-index: $zindex-header;	
 }
 
 .level-1-list {
@@ -18,13 +16,22 @@
 	}
 }
 
+	.level-1-link {
+		text-transform: uppercase;
+		color: $navbar-default-link-color;
+		&:hover {
+			color: $navbar-default-link-hover-color;
+			background-color: $navbar-default-link-hover-bg;
+			text-decoration: none;
+		}		
+	}
+
 
 // Main Menu
 // =======================================================
 .navbar-primary {
 	background-color: $navbar-default-bg;
 	color: $navbar-default-color;
-	border-color: $navbar-default-border;
 }
 
 
@@ -34,4 +41,13 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+// Current item
+// =======================================================
+.current-menu-parent > .menu-main-link,
+.current_page_item > .menu-main-link {
+	color: $navbar-default-link-active-color;
+	background-color: $navbar-default-link-active-bg;
+	cursor: default;
 }

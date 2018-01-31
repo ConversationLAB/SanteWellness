@@ -11,19 +11,11 @@ function launch_sesha_child() {
 	add_action( 'widgets_init', 'sesha_sidebar_init' );
 
 	// Set Google API key for maps
-	add_action('acf/init', 'sesha_after_acf_init');
+	// add_action('acf/init', 'sesha_after_acf_init');
 
 	// launching this stuff after theme setup
 	sesha_theme_support_child();
 
-}
-
-
-// Declare WooCommerce Support
-// -------------------------------------------------------------------------------
-add_action( 'after_setup_theme', 'woocommerce_support' );
-function woocommerce_support() {
-    add_theme_support( 'woocommerce' );
 }
 
 
@@ -38,7 +30,6 @@ function sesha_after_acf_init() {
 // -------------------------------------------------------------------------------
 add_action( 'after_setup_theme', 'launch_sesha_child' );
 
-
 // Theme Suppport 
 // -------------------------------------------------------------------------------
 // Adding WP 3+ Functions & Theme Support
@@ -47,7 +38,6 @@ function sesha_theme_support_child() {
 	register_nav_menus(
 		array(
 			'main-nav' => __( 'The Main Menu', 'sesha' ),   // main nav in header
-			'footer-links' => __( 'The Footer Menu', 'sesha' ), // secondary nav in footer
 		)
 	);
 
@@ -57,48 +47,6 @@ function sesha_theme_support_child() {
 
 
 	add_theme_support( "title-tag" ) ;
-
-	add_theme_support( "custom-background", array(
-		'default-color'          => '',
-		'default-image'          => '',
-		'default-repeat'         => 'repeat',
-		'default-position-x'     => 'left',
-		'default-position-y'     => 'top',
-		'default-size'           => 'auto',
-		'default-attachment'     => 'scroll',
-		'wp-head-callback'       => '_custom_background_cb',
-		'admin-head-callback'    => '',
-		'admin-preview-callback' => ''
-	) );
-
-	add_theme_support( 'custom-header', array(
-		'default-image'          => get_stylesheet_directory_uri() . '/library/images/header-default.jpg',
-		'width'                  => 1280,
-		'height'                 => 400,
-		'flex-height'            => true,
-		'flex-width'             => true,
-		'uploads'                => true,
-		'random-default'         => false,
-		'header-text'            => true,
-		'default-text-color'     => '',
-		'wp-head-callback'       => '',
-		'admin-head-callback'    => '',
-		'admin-preview-callback' => '',
-	));
-
-	register_default_headers( array(
-		'sunset' => array(
-				'url'           => get_stylesheet_directory_uri() . '/library/images/header-01.jpg',
-				'thumbnail_url' => get_stylesheet_directory_uri() . '/library/images/header-01.jpg',
-				'description'   => 'Header Image',
-		),
-		'flower' => array(
-				'url'           => get_stylesheet_directory_uri() . '/library/images/header-02.jpg',
-				'thumbnail_url' => get_stylesheet_directory_uri() . '/library/images/header-02.jpg',
-				'description'   => 'Header Image',
-		),  
-	));
-
 
 	// Add theme support for Custom Logo.
 	add_theme_support( 'custom-logo', array(
@@ -149,56 +97,4 @@ function sesha_child_scripts_and_styles() {
 
 function sesha_dequeue_script() {
 	wp_dequeue_script( 'sesha-head' ); // Dequeue the child script, but keep the parent script. 
-}
-
-
-// CSS and JS inspect utility
-// -------------------------------------------------------------------------------
-function sesha_inspect_scripts_and_styles() {
-	global $wp_scripts;
-	global $wp_styles;
-
-	// Runs through the queue scripts
-	foreach( $wp_scripts->queue as $handle ) :
-	$scripts_list .= $handle . ' | ';
-	endforeach;
-
-	// Runs through the queue styles
-	foreach( $wp_styles->queue as $handle ) :
-	$styles_list .= $handle . ' | ';
-	endforeach;
-
-	printf('<br><br><br>Scripts: %1$s  Styles: %2$s',
-	$scripts_list,
-	$styles_list);
-}
-
-// Uncomment if you need ti view all enqueued scripts and styles
-// add_action( 'wp_print_scripts', 'sesha_inspect_scripts_and_styles' );
-
-
-// Author sesha_get_author_details
-// -------------------------------------------------------------------------------
-function sesha_get_author_details() {
-	if(get_the_author_posts() > 1)  {
-		$author_posts = 'Posts';
-	} else {
-		$author_posts = 'Post';
-	};
-
-
-	printf("
-		<figure class='author__wrapper'>
-			<img src='%s' class='author__avatar'>
-			<a href='mailto:%s' class='author__link'>%s</a> | 
-			<a href='%s' class='author__posts'>%s %s</a>
-		</figure>
-		", 
-		get_avatar_url(get_the_author_meta('ID')),
-		get_the_author_meta('user_email'),
-		get_the_author_meta('display_name'),
-		get_author_posts_url(get_the_author_meta('ID')),
-		get_the_author_posts(),
-		$author_posts
-	);
 }

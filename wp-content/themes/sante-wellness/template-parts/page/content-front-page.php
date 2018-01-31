@@ -12,19 +12,85 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('page-single / baseline-md clearfix'); ?>>
-	<header class="page-header">
-		<?php the_title( '<h2 class="page-title">', '</h2>' ); ?>
-	</header><!-- .entry-header -->
-	
-	<div class="entry-content">
-		<?php
-			the_content();
+<?php the_content(); ?>
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'sesha' ),
-				'after'  => '</div>',
-			) );
+
+<?php 
+if( have_rows('landing_blocks') ): 
+	$row_index = 1;
+	$column_index = 1;
+?>
+
+	<div class="row baseline-grid">
+
+	<?php while( have_rows('landing_blocks') ): the_row();
+		$title = get_sub_field('landing_title');
+		$content = get_sub_field('landing_text');
+		$image = 'style="background-image: url('. get_sub_field('landing_image')['url']. '); "';
+		$buttons = get_sub_field('landing_buttons');
 		?>
-	</div><!-- .entry-content -->
-</article><!-- #post-## -->
+		<?php
+			if($row_index%2 == 0) {
+				if($column_index%2 == 0) {
+					$col = 'is-main / col-md-8 col-lg-8';
+					$h_class = 'j1';
+				} else {
+					$col = 'is-alternate / col-md-4 col-lg-4';
+					$h_class = 'j2';
+				}			
+			} else {
+				if($column_index%2 == 0) {
+					$col = 'is-alternate / col-md-4 col-lg-4';
+					$h_class = 'j2';
+				} else {
+					$col = 'is-main / col-md-8 col-lg-8';
+					$h_class = 'j1';
+				}		
+			}	
+		?>
+
+
+
+
+		<div class="landing__block-wrapper / <?php echo $col; ?>" <?php echo $image; ?>>
+
+			<div class="landing__block-content">
+			
+				<h2 class="landing__block-title / <?php echo $h_class; ?>">
+					<?php echo $title; ?>
+				</h2>
+
+				<?php echo $content; ?>
+			</div>
+
+			<?php if( $buttons ): ?>
+			<div class="landing__block-buttons">
+			<?php
+				foreach ($buttons as $key => $button) {
+					printf('
+						<a href="%s" class="btn-landing / btn btn-default btn-xs">
+							%s
+						</a>
+					',
+					get_permalink( $button->ID),
+					$button->post_title
+					);
+				}
+			?>
+			</div>
+			<?php endif; ?>
+
+		</div>
+
+
+	<?php 
+	if($column_index%2 == 0) $row_index++; 
+	$column_index++;
+	endwhile; 
+	?>
+
+</div>
+
+
+
+<?php endif; ?>

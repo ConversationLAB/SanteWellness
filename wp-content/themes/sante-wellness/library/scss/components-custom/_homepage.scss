@@ -1,2 +1,40 @@
 // Homepage
 // ---------------------------------------------
+.landing__block-wrapper {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $teal;
+    background-position: left center;
+    padding: $padding-md;
+    color: $blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: $baseline-sm;
+    min-height: 35vh;
+
+    &.is-alternate {
+        color: $white; 
+		padding-right: $padding-md;
+
+        .landing__block-buttons {
+            text-align: right;
+        }
+    } 
+}
+
+	.btn-landing {
+		margin-bottom: $baseline-xs;
+	}
+
+@media (min-width: $grid-float-breakpoint) {
+	.landing__block-content {
+		.is-main & {
+			padding-right: 340px;
+		}
+	}
+}
+
+@media (max-width: $grid-float-breakpoint-max) {
+	.landing__block-buttons {}
+}

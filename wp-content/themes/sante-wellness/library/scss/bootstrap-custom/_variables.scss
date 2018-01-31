@@ -101,12 +101,24 @@ $font-size-base:          16px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default;
 $font-size-small:         ceil(($font-size-base * 0.85)) !default;
 
-$font-size-h1:            floor(($font-size-base * 3)) !default; //48px
-$font-size-h2:            floor(($font-size-base * 2.4)) !default; // 38px
-$font-size-h3:            ceil(($font-size-base * 1.875)) !default; // 30px
-$font-size-h4:            $font-size-base !default;  // 16px
+$font-size-j1:            floor(($font-size-base * 3)) !default; // 48px
+$font-size-j2:            floor(($font-size-base * 2.4)) !default; // 38px
+$font-size-j3:            ceil(($font-size-base * 1.875)) !default; // 30px
+$font-size-j4:            ceil(($font-size-base * 1.875)) !default; // 30px
+
+$font-size-h1:            floor(($font-size-base * 3)) !default; 
+$font-size-h2:            floor(($font-size-base * 1.4)) !default; 
+$font-size-h3:            ceil(($font-size-base * 1.2)) !default; 
+$font-size-h4:            $font-size-base !default; 
 $font-size-h5:            $font-size-base !default;
 $font-size-h6:            $font-size-base !default; 
+
+$font-size-h1-mobile:            floor(($font-size-base * 2.5)) !default;
+$font-size-h2-mobile:            floor(($font-size-base * 2)) !default;
+$font-size-h3-mobile:            ceil(($font-size-base * 1.6)) !default;
+$font-size-h4-mobile:            $font-size-base !default; 
+$font-size-h5-mobile:            $font-size-base !default;
+$font-size-h6-mobile:            $font-size-base !default; 
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:        1.428571429 !default; // 20/14
@@ -184,9 +196,9 @@ $btn-default-color:              $white !default;
 $btn-default-bg:                 transparent !default;
 $btn-default-border:             $white  !default;
 
-$btn-primary-color:              $white !default;
-$btn-primary-bg:                 $brand-primary !default;
-$btn-primary-border:             $brand-primary !default;
+$btn-primary-color:              $brand-primary !default;
+$btn-primary-bg:                 transparent !default;
+$btn-primary-border:             $brand-primary !default; 
 
 $btn-secondary-color:              $white !default;
 $btn-secondary-bg:                 $brand-secondary !default;
@@ -393,10 +405,10 @@ $baseline-lg  : $grid-gutter-width*2;
 
 // Padding
 // ----------------------------------------------------------------
-$padding-xs  : 	$padding-base-vertical/1.5; 
-$padding-sm : 	$padding-base-vertical;
-$padding-md  : 	$padding-large-vertical;
-$padding-lg  :	$padding-large-vertical*1.5;
+$padding-xs  : 	5px; 
+$padding-sm : 	10px;
+$padding-md  : 	20px;
+$padding-lg  :	30px;
 
 //== Container sizes
 //
@@ -425,14 +437,14 @@ $container-lg:                 $container-large-desktop !default;
 //##
 $header-height:                    140px !default; 
 $header-height-reduced:            140px !default; 
-$header-height-mobile:             40px !default; 
+$header-height-mobile:             60px !default; 
 $header-default-bg :				$brand-primary;
 
 
 //== Footer
 //
 //##
-$footer-height : 					250px !default;
+$footer-height : 					300px !default;
 
 
 //== Navbar
@@ -580,6 +592,16 @@ $jumbotron-bg:                   $gray-lighter !default;
 $jumbotron-heading-color:        inherit !default;
 $jumbotron-font-size:            ceil(($font-size-base * 1.5)) !default;
 $jumbotron-heading-font-size:    ceil(($font-size-base * 4.5)) !default;
+
+
+//== Slideshow Banner
+//
+//##
+$slideshow_height: 500px;
+$slideshow_height_mobile: 300px;
+$slideshow_pos_x: 60%;
+$slideshow_pos_y: $slideshow_height/1.5;
+
 
 
 //== Form states and alerts
