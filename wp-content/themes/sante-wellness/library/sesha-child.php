@@ -98,3 +98,31 @@ function sesha_child_scripts_and_styles() {
 function sesha_dequeue_script() {
 	wp_dequeue_script( 'sesha-head' ); // Dequeue the child script, but keep the parent script. 
 }
+
+
+function sesha_brochure_button() {
+	if ( get_field('upload_documents') ) : 
+		$document = get_field('upload_documents');
+		if(get_field('upload_documents_title')) {
+			$title = get_field('upload_documents_title');
+		} else {
+			$title = 'Download';
+		}
+	endif;
+
+	$button_string = '
+	<p>
+		<a class="btn btn-secondary btn-xs" href="'.$document['url'].'" target="_blank">
+			<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+			'.$title.'
+		</a>
+	</p>';
+
+   return $button_string;
+}
+
+function sesha_register_shortcodes() {
+   add_shortcode('brochure-button', 'sesha_brochure_button');
+}
+
+add_action( 'init', 'sesha_register_shortcodes');

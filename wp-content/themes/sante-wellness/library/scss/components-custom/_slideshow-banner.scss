@@ -1,28 +1,29 @@
 .slideshow__banner {
 	background: $dark-blue;
     .slick-prev,
-    .slick-next {
-        
+    .slick-next {     
     }
 }
 
 .slideshow__banner-title-wrapper  {
-		position: absolute;
+	position: absolute;
 }
 
 .slideshow__banner-slide {
     display: block;
     height: $slideshow_height;
+	max-height: $slideshow_max_height;
 	background-repeat: no-repeat;
 	background-position: center center;
-
 }
 
 @media (min-width: $grid-float-breakpoint) {
 	.slideshow__banner-slide {
 		height: $slideshow_height;
+		max-height: $slideshow_max_height;
 		.container {
 			height: $slideshow_height;
+			max-height: $slideshow_max_height;
 		}		
 	}
 	.slideshow__banner-title-wrapper  {

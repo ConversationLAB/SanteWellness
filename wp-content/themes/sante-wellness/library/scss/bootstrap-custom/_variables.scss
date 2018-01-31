@@ -444,7 +444,7 @@ $header-default-bg :				$brand-primary;
 //== Footer
 //
 //##
-$footer-height : 					300px !default;
+$footer-height : 					200px !default;
 
 
 //== Navbar
@@ -527,15 +527,15 @@ $nav-disabled-link-color:                   $gray-light !default;
 $nav-disabled-link-hover-color:             $gray-light !default;
 
 //== Tabs
-$nav-tabs-border-color:                     #ddd !default;
+$nav-tabs-border-color:                     $brand-primary !default;
 
-$nav-tabs-link-hover-border-color:          $gray-lighter !default;
+$nav-tabs-link-hover-border-color:          $brand-primary !default;
 
 $nav-tabs-active-link-hover-bg:             $body-bg !default;
-$nav-tabs-active-link-hover-color:          $gray !default;
-$nav-tabs-active-link-hover-border-color:   #ddd !default;
+$nav-tabs-active-link-hover-color:          $brand-primary !default;
+$nav-tabs-active-link-hover-border-color:   $brand-primary !default;
 
-$nav-tabs-justified-link-border-color:            #ddd !default;
+$nav-tabs-justified-link-border-color:            $brand-primary !default;
 $nav-tabs-justified-active-link-border-color:     $body-bg !default;
 
 //== Pills
@@ -597,10 +597,11 @@ $jumbotron-heading-font-size:    ceil(($font-size-base * 4.5)) !default;
 //== Slideshow Banner
 //
 //##
-$slideshow_height: 500px;
+$slideshow_height: 50vh;
+$slideshow_max_height: 500px;
 $slideshow_height_mobile: 300px;
 $slideshow_pos_x: 60%;
-$slideshow_pos_y: $slideshow_height/1.5;
+$slideshow_pos_y: $slideshow_height/2;
 
 
 

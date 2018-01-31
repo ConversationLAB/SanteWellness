@@ -17,7 +17,7 @@
 // Core CSS
 @import "bootstrap-custom/scaffolding";
 @import "bootstrap-custom/type"; // Custom
-@import "bootstrap/code";
+// @import "bootstrap/code";
 @import "boostrap-flexbox-grid/bootstrap-grid-flexbox"; // https://github.com/ngengs/bootstrap-grid-flexbox
 @import "bootstrap/tables";
 @import "bootstrap-custom/forms"; 
@@ -30,34 +30,34 @@
 }
 @media (max-width: $grid-float-breakpoint) { 
 	@import "bootstrap-custom/navbar-mobile"; // Custom 
-} 
+}  
  
 // Components
-@import "bootstrap/component-animations";
-@import "bootstrap/dropdowns";
-@import "bootstrap/breadcrumbs";
-@import "bootstrap/navs";
-@import "bootstrap/button-groups";
-@import "bootstrap-custom/input-groups";
-@import "bootstrap/pagination";
-@import "bootstrap/pager";
-@import "bootstrap/labels";
-@import "bootstrap/badges";
+// @import "bootstrap/component-animations";
+// @import "bootstrap/dropdowns";
+// @import "bootstrap/breadcrumbs";
+@import "bootstrap-custom/navs";// Custom 
+// @import "bootstrap/button-groups";
+// @import "bootstrap-custom/input-groups";// Custom 
+// @import "bootstrap/pagination";
+// @import "bootstrap/pager";
+// @import "bootstrap/labels";
+// @import "bootstrap/badges";
 // @import "bootstrap-custom/jumbotron"; // Custom 
-@import "bootstrap/thumbnails";
-@import "bootstrap/alerts"; 
-@import "bootstrap/progress-bars";
-@import "bootstrap/media";
-@import "bootstrap/list-group";
-@import "bootstrap/panels";
-@import "bootstrap/responsive-embed";
-@import "bootstrap/wells";
-@import "bootstrap/close"; 
+// @import "bootstrap/thumbnails";
+// @import "bootstrap/alerts"; 
+// @import "bootstrap/progress-bars";
+// @import "bootstrap/media";
+// @import "bootstrap/list-group";
+// @import "bootstrap/panels";
+// @import "bootstrap/responsive-embed";
+// @import "bootstrap/wells";
+// @import "bootstrap/close"; 
  
 // Components w/ JavaScript
-@import "bootstrap-custom/modals"; 
-@import "bootstrap/tooltip"; 
-@import "bootstrap/popovers"; 
+// @import "bootstrap-custom/modals"; 
+// @import "bootstrap/tooltip"; 
+// @import "bootstrap/popovers"; 
  
 // Custom Components
 // @import "components-custom/blog-post-listing";
