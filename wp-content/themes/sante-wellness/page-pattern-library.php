@@ -4,7 +4,6 @@
  * Description: Style guide of page elements
  */
 get_header(); ?>
-
 <?php include('pattern-library/navigation.php') ?>
 <?php include('pattern-library/buttons.php') ?>
 <?php include('pattern-library/type.php') ?>
@@ -15,8 +14,4 @@ get_header(); ?>
 <?php include('pattern-library/progress-bars.php') ?>
 <?php include('pattern-library/containers.php') ?>
 <?php include('pattern-library/dialogs.php') ?>
-
-
-
 <?php get_footer(); ?>
- 
