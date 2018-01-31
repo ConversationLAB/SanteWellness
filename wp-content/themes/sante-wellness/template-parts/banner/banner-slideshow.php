@@ -30,7 +30,7 @@ if( have_rows('slideshow_banner', $postID) ) : ?>
 			<?php if( $title ): ?>
 				<div class="container relative">				
 					<header class="slideshow__banner-title-wrapper" <?php echo $position; ?>>
-						<div class="slideshow__banner-title / h1 text-uppercase baseline-none" <?php echo $color; ?>>
+						<div class="slideshow__banner-title / j1 text-uppercase baseline-none" <?php echo $color; ?>>
 							<?php echo $title; ?>
 						</div>
 					</header>

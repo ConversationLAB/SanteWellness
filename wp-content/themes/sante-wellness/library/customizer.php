@@ -402,20 +402,22 @@ function sesha_dynamic_css() {
 <?php endif; ?>
 
 <style id="customiser-styles">
-	.jumbotron {
-		color: #<?php echo get_header_textcolor() ?>;
-	}
 	body {
 		font-family: <?php echo get_option( 'setting_fonts' ); ?>, sans-serif;
 		font-weight: <?php echo get_option( 'setting_fonts_weight_body' ); ?>;
 	}
-	h1, h2, h3, h4, h5, h6,
-	.h1, .h2, .h3, .h4, .h5, .h6,
-	.h1-heavy, .h2-heavy, .h3-heavy, .h4-heavy, .h5-heavy, .h6-heavy {
+	h1, h2, h3, h4,
+	.h1, .h2, .h3, .h4,
+	.h1-heavy, .h2-heavy, .h3-heavy, .h4-heavy,
+	.j1, .j1-heavy,
+	.j2, .j2-heavy,
+	.j3, .j3-heavy,
+	.j4, .j4-heavy {
 		font-family: <?php echo get_option( 'setting_fonts_headings' ); ?>, sans-serif;
 		font-weight: <?php echo get_option( 'setting_fonts_weight_headings' ); ?>;
 	}
-	.h1-heavy, .h2-heavy, .h3-heavy, .h4-heavy, .h5-heavy, .h6-heavy {
+	.h1-heavy, .h2-heavy, .h3-heavy, .h4-heavy,
+	.j1-heavy, .j2-heavy, .j3-heavy, .j4-heavy {
 		font-weight: <?php echo get_option( 'setting_fonts_weight_headings_bold' ); ?>;
 	}
 

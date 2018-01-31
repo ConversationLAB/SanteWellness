@@ -101,10 +101,15 @@ $font-size-base:          16px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default;
 $font-size-small:         ceil(($font-size-base * 0.85)) !default;
 
-$font-size-h1:            floor(($font-size-base * 3)) !default; //48px
-$font-size-h2:            floor(($font-size-base * 2.4)) !default; // 38px
-$font-size-h3:            ceil(($font-size-base * 1.875)) !default; // 30px
-$font-size-h4:            $font-size-base !default;  // 16px
+$font-size-j1:            floor(($font-size-base * 3)) !default; // 48px
+$font-size-j2:            floor(($font-size-base * 2.4)) !default; // 38px
+$font-size-j3:            ceil(($font-size-base * 1.875)) !default; // 30px
+$font-size-j4:            ceil(($font-size-base * 1.875)) !default; // 30px
+
+$font-size-h1:            floor(($font-size-base * 3)) !default; 
+$font-size-h2:            floor(($font-size-base * 1.4)) !default; 
+$font-size-h3:            ceil(($font-size-base * 1.2)) !default; 
+$font-size-h4:            $font-size-base !default; 
 $font-size-h5:            $font-size-base !default;
 $font-size-h6:            $font-size-base !default; 
 

@@ -6,8 +6,14 @@
 // -------------------------
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6, 
-.h1-heavy, .h2-heavy, .h3-heavy, .h4-heavy, .h5-heavy, .h6-heavy {
+.h1, .h2, .h3, .h4,
+//  .h4, .h5, .h6, 
+.h1-heavy, .h2-heavy, .h3-heavy, .h4-heavy,
+.j1, .j1-heavy,
+.j2, .j2-heavy,
+.j3, .j3-heavy,
+.j4, .j4-heavy {
+// , .h5-heavy, .h6-heavy 
   margin: 0;
   font-family: $headings-font-family;
   font-weight: $headings-font-weight;
@@ -15,33 +21,41 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 400;
 }
 
-.h1-heavy, .h2-heavy, .h3-heavy, .h4-heavy, .h5-heavy, .h6-heavy {
+.h1-heavy, .h2-heavy, .h3-heavy, .h4-heavy
+// .h5-heavy, .h6-heavy 
+{
 	font-weight: 700;
 }
 
 h1, .h1, .h1-heavy,
 h2, .h2, .h2-heavy,
 h3, .h3, .h3-heavy,
-h4, .h4, .h4-heavy,
-h5, .h5, .h5-heavy,
-h6, .h6, .h6-heavy {
+h4, .h4, .h4-heavy
+// h5, .h5, .h5-heavy,
+// h6, .h6, .h6-heavy 
+{
   margin-bottom: .5em;
 }
+
+.j1, .j1-heavy { font-size: $font-size-j1; }
+.j2, .j2-heavy { font-size: $font-size-j2; }
+.j3, .j3-heavy { font-size: $font-size-j3; }
+.j4, .j4-heavy { font-size: $font-size-j4; }
 
 h1, .h1, .h1-heavy { font-size: $font-size-h1; }
 h2, .h2, .h2-heavy { font-size: $font-size-h2; }
 h3, .h3, .h3-heavy { font-size: $font-size-h3; }
 h4, .h4, .h4-heavy { font-size: $font-size-h4; }
-h5, .h5, .h5-heavy { font-size: $font-size-h5; }
-h6, .h6, .h5-heavy { font-size: $font-size-h6; }
+// h5, .h5, .h5-heavy { font-size: $font-size-h5; }
+// h6, .h6, .h5-heavy { font-size: $font-size-h6; }
 
 @media (max-width: $screen-xs-max) {
 	h1, .h1, .h1-heavy { font-size: $font-size-h1-mobile; }
 	h2, .h2, .h2-heavy { font-size: $font-size-h2-mobile; }
 	h3, .h3, .h3-heavy { font-size: $font-size-h3-mobile; }
 	h4, .h4, .h4-heavy { font-size: $font-size-h4-mobile; }
-	h5, .h5, .h5-heavy { font-size: $font-size-h5-mobile; }
-	h6, .h6, .h5-heavy { font-size: $font-size-h6-mobile; }
+	// h5, .h5, .h5-heavy { font-size: $font-size-h5-mobile; }
+	// h6, .h6, .h5-heavy { font-size: $font-size-h6-mobile; }
 } 
 
 // Body text
