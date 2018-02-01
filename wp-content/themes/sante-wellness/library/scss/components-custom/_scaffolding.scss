@@ -3,6 +3,7 @@
 .site-content {
 	min-height: calc(100vh - #{$header-height} - #{$footer-height}  - #{$slideshow_height});
 	padding-top: $baseline-md;
+	background-color: $white;
 }
 
 

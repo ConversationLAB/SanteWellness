@@ -19,7 +19,7 @@ $gray-darker:   		darken($gray-base, 15%) !default;
 $gray-dark:         	darken($gray-base, 10%) !default;
 $gray:              	$gray-base !default;
 $gray-light:        	lighten($gray-base, 10%) !default;
-$gray-lighter:      	lighten($gray-base, 15%) !default;
+$gray-lighter:      	lighten($gray-base, 45%) !default;
 
 
 $red : 		#eb1c23;
@@ -105,6 +105,11 @@ $font-size-j1:            floor(($font-size-base * 3)) !default; // 48px
 $font-size-j2:            floor(($font-size-base * 2.4)) !default; // 38px
 $font-size-j3:            ceil(($font-size-base * 1.875)) !default; // 30px
 $font-size-j4:            ceil(($font-size-base * 1.875)) !default; // 30px
+
+$font-size-j1-mobile:            floor(($font-size-base * 2)) !default; 
+$font-size-j2-mobile:            floor(($font-size-base * 1.8)) !default;
+$font-size-j3-mobile:            ceil(($font-size-base * 1.6)) !default; 
+$font-size-j4-mobile:            ceil(($font-size-base * 1.6)) !default;
 
 $font-size-h1:            floor(($font-size-base * 3)) !default; 
 $font-size-h2:            floor(($font-size-base * 1.4)) !default; 
@@ -235,9 +240,9 @@ $btn-border-radius-small:        $border-radius-small !default;
 //##
 
 //** `<input>` background color
-$input-bg:                       $gray !default;
+$input-bg:                       $gray-lighter !default;
 //** `<input disabled>` background color
-$input-bg-disabled:              $gray-lighter !default;
+$input-bg-disabled:              $gray !default;
 
 //** Text color for `<input>`s
 $input-color:                    $gray-darker !default;

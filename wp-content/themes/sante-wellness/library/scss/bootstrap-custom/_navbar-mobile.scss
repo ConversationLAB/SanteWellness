@@ -39,6 +39,12 @@ body {
 	}	
 }
 
+// Main Menu
+// =======================================================
+.navbar-primary {
+	background-color: $brand-primary-alt;
+}
+
 // Site logo
 // =======================================================
 .navbar-brand-wrapper {
@@ -123,7 +129,7 @@ body {
 	text-align: left;
 	color: $navbar-default-link-color;
 	padding: 12px 20px;
-	border-bottom: solid 1px $brand-primary-alt;
+	border-bottom: solid 1px $brand-primary;
 	&:hover,
 	&:active {
 		background-color: $dark-blue;

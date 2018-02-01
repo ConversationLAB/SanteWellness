@@ -11,3 +11,5 @@ require_once( 'library/custom-post-type-example.php' );
 require_once( 'library/customizer.php' );
 // CUSTOM CHILD PAGES MENU
 require_once( 'library/custom-wp-sub-menu.php' );
+// CUSTOM CHILD PAGES MENU
+require_once( 'library/custom-wp-sub-menu-mobile.php' );

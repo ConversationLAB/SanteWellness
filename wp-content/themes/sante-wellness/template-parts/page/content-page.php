@@ -35,6 +35,13 @@ $subMenu = wp_list_pages(array(
 	'walker' => new sub_menu_walker() 
 ));
 
+$subMenu_mobile = wp_list_pages(array(
+	'child_of' => $postID, 
+	'title_li' => '',
+	'echo' => 0,
+	'walker' => new sub_menu_walker_mobile() 
+));
+
 // Show or hide the sidebar
 $hide_the_sidebar = get_field('hide_the_sidebar');
 
@@ -67,11 +74,16 @@ $book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
 <div id="post-<?php the_ID(); ?>" <?php post_class('page-single / clearfix row'); ?>>
 
 	<?php if($subMenu) : ?>
-	<div class="page__nav_sidebar / col-lg-3 col-md-3 / visible-md-block visible-lg-block">
-		<ol class="subnav__menu / menu-vert">
+	<div class="page__nav_sidebar / col-lg-3 col-md-3">
+		<ol class="subnav__menu / menu-vert / visible-md-block visible-lg-block">
 			<?php echo $subMenu; ?>
 		</ol>
-	</div>	
+
+		<select class="js-page-select / subnav__menu / visible-xs-block visible-sm-block baseline-sm input-lg">
+			<option value="">Choose a page ...</option>
+			<?php echo $subMenu_mobile; ?>
+		</select>
+	</div>
 	<?php endif; ?>
 
 	<div class="page__content / <?php echo $col_content; ?>">

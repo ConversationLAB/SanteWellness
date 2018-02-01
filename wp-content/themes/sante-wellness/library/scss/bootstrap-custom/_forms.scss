@@ -112,7 +112,7 @@ output {
 // input[type="color"]
 
 .form-control,
-input[type=password], input[type=text], input[type=file], textarea, .ms-inputBox {
+input[type=password], input[type=text], input[type=file], textarea, .ms-inputBox, select {
   display: block;
   width: 100%;
   height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)

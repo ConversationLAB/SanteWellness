@@ -32,9 +32,15 @@
 		.is-main & {
 			padding-right: 340px;
 		}
-	}
+    }
+    
+    .landing__block-wrapper {
+        min-height: 35vh;      
+    }
 }
 
 @media (max-width: $grid-float-breakpoint-max) {
-	.landing__block-buttons {}
+    .landing__block-wrapper {
+        min-height: 200px;      
+    }
 }

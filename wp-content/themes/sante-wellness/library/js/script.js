@@ -43,6 +43,15 @@ var SBchild = {
 		});
 
 
+		
+		$cache.body.on('change', '.js-page-select', function() {
+			var $el = $(this),
+				value = $el.val();
+			
+			window.location = value;
+
+		});
+
         // Slideshows
         // ------------------------------------------------------------------
         $('.js-slideshow').slick({
