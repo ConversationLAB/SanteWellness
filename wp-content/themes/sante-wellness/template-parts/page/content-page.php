@@ -88,6 +88,10 @@ $book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
 
 	<div class="page__content / <?php echo $col_content; ?>">
 
+		<h1>
+			<?php the_title() ?>
+		</h1>
+
 		<?php the_content(); ?>	
 
 		<?php 

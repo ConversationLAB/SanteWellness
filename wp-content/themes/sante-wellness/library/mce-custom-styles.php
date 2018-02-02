@@ -3,8 +3,11 @@
 // ---------------------------------------------------------
 function mce_colour_swatches($init) {
 	$default_colours = '
-		"1f1f1f", "Black",
-		"ffffff", "White"
+		"000000", "Black",
+		"ffffff", "White",
+		"194d5d", "Blue",
+		"0e2c35", "Dark Blue",
+		"1695ac", "Teal"
 	';
 
 	$custom_colours =  '';
@@ -51,17 +54,32 @@ function mce_add_custom_styles( $init_array ) {
 	$style_formats = array(
 		// Each array child is a format with it's own settings
 		array(
+			'title' => 'Large Text',
+			'selector' => 'p',
+			'classes' => 'h2',
+		),
+		array(
+			'title' => 'Large Bold Text',
+			'selector' => 'p',
+			'classes' => 'h2-heavy',
+		),
+		array(
+			'title' => 'Uppercase Text',
+			'selector' => 'p',
+			'classes' => 'text-uppercase',
+		),
+		array(
 			'title' => 'Standard Size Buttons',
 			'items' => array(
 				array(
 					'title' => 'Primary Button',
 					'selector' => 'a',
-					'classes' => 'btn-primary',
+					'classes' => 'btn btn-primary',
 				),
 				array(
 					'title' => 'Secondary Button',
 					'selector' => 'a',
-					'classes' => 'btn-secondary',
+					'classes' => 'btn btn-secondary',
 				)
 			),
 		),
@@ -71,12 +89,12 @@ function mce_add_custom_styles( $init_array ) {
 				array(
 					'title' => 'Primary Button',
 					'selector' => 'a',
-					'classes' => 'btn-primary btn-large',
+					'classes' => 'btn btn-primary btn-lg',
 				),
 				array(
 					'title' => 'Secondary Button',
 					'selector' => 'a',
-					'classes' => 'btn-secondary btn-large',
+					'classes' => 'btn btn-secondary btn-lg',
 				)
 			),
 		)

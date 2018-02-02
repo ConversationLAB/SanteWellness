@@ -26,8 +26,4 @@ $book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
 
 <main id="site-content" class="site-content / has-menu-animation clearfix" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 	<div class="container">
-
-<h1 class="sr-only">
-	<?php the_title() ?>
-</h1>
 	

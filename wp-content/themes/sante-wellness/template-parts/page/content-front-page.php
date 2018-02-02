@@ -11,9 +11,12 @@
  */
 
 ?>
-
-<?php the_content(); ?>
-
+<div class="baseline-md">
+	<h1 class="sr-only">
+		<?php the_title() ?>
+	</h1>
+	<?php the_content(); ?>
+</div>
 
 <?php 
 if( have_rows('landing_blocks') ): 
@@ -23,34 +26,32 @@ if( have_rows('landing_blocks') ):
 
 	<div class="row baseline-grid">
 
-	<?php while( have_rows('landing_blocks') ): the_row();
+	<?php 
+	while( have_rows('landing_blocks') ): the_row();
 		$title = get_sub_field('landing_title');
 		$content = get_sub_field('landing_text');
 		$image = 'style="background-image: url('. get_sub_field('landing_image')['url']. '); "';
 		$buttons = get_sub_field('landing_buttons');
-		?>
+	?>
 		<?php
 			if($row_index%2 == 0) {
 				if($column_index%2 == 0) {
 					$col = 'is-main / col-md-8 col-lg-8';
-					$h_class = 'j1';
+					$h_class = 'j1 baseline-sm';
 				} else {
 					$col = 'is-alternate / col-md-4 col-lg-4';
-					$h_class = 'j2';
+					$h_class = 'j2 baseline-sm';
 				}			
 			} else {
 				if($column_index%2 == 0) {
 					$col = 'is-alternate / col-md-4 col-lg-4';
-					$h_class = 'j2';
+					$h_class = 'j2 baseline-sm';
 				} else {
 					$col = 'is-main / col-md-8 col-lg-8';
-					$h_class = 'j1';
+					$h_class = 'j1 baseline-sm';
 				}		
 			}	
 		?>
-
-
-
 
 		<div class="landing__block-wrapper / <?php echo $col; ?>" <?php echo $image; ?>>
 
@@ -81,7 +82,6 @@ if( have_rows('landing_blocks') ):
 			<?php endif; ?>
 
 		</div>
-
 
 	<?php 
 	if($column_index%2 == 0) $row_index++; 
