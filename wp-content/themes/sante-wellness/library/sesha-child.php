@@ -5,7 +5,6 @@ function launch_sesha_child() {
 
 	// Enqueue child scripts and styles
 	add_action( 'wp_enqueue_scripts', 'sesha_child_scripts_and_styles' );
-	add_action( 'wp_print_scripts', 'sesha_dequeue_script', 100 );
 
 	// Add new sidebars
 	add_action( 'widgets_init', 'sesha_sidebar_init' );
@@ -80,24 +79,21 @@ function sesha_sidebar_init() {
 // -------------------------------------------------------------------------------
 function sesha_child_scripts_and_styles() {
 
+	wp_register_script( 'sesha-head', get_stylesheet_directory_uri() . '/library/scripts/head.min.js'); //, array(), '', false 
+	wp_enqueue_script( 'sesha-head' );
+
 	wp_register_style( 'sesha-child-styles', get_stylesheet_directory_uri() . '/library/css/style-child.css', array(), '' );
 	wp_enqueue_style( 'sesha-child-styles' );
 
 	wp_register_script( 'google-font-loader', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js' );
 	wp_enqueue_script( 'google-font-loader' );
 
-	wp_register_script( 'sesha-head-child', get_template_directory_uri() . '/library/scripts/head.min.js' );
-	wp_enqueue_script( 'sesha-head-child' );
-
-	wp_register_script( 'sesha-js-child', get_template_directory_uri() . '/library/scripts/scripts.min.js', array( 'jquery' ), '', true );
+	wp_register_script( 'sesha-js-child', get_stylesheet_directory_uri() . '/library/scripts/scripts.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'sesha-js-child' );	
 
+	wp_enqueue_script( 'jquery' );
 }
 
-
-function sesha_dequeue_script() {
-	wp_dequeue_script( 'sesha-head' ); // Dequeue the child script, but keep the parent script. 
-}
 
 
 function sesha_brochure_button() {

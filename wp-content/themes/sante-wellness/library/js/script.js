@@ -23,27 +23,9 @@ var SBchild = {
 			}
 		});
 
-		$cache.body.on('click', 'a[href*=#].has-scroll-animation:not([href=#])', function(event) {
-			if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
-				var target =  $(this.hash);
-
-				console.log(target.selector);
-				console.log('The Pathname: '+location.pathname, ', This pathname: '+this.pathname, ', The Hostname : '+location.hostname);
-
-				if( target.selector.length) {
-					event.preventDefault();
-					$('html, body').animate({
-						scrollTop: target.offset().top
-					}, 500);
-
-					$cache.body.toggleClass('has-navigation-active');
-				}
-			}
-
-		});
-
-
 		
+		// Mobile slect drop down links
+		// ------------------------------------------------------------------
 		$cache.body.on('change', '.js-page-select', function() {
 			var $el = $(this),
 				value = $el.val();
@@ -62,7 +44,48 @@ var SBchild = {
             "nextArrow": '<button type="button" class="slick-arrow slick-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>',
             "prevArrow": '<button type="button" class="slick-arrow slick-prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>'
         });
- 
+
+		
+
+		// Navigation menu
+		// ------------------------------------------------------------------
+		// Show the off canvas menu
+		$cache.header.on('click', '.js-toggle-offcanvas-menu', function () {
+			$cache.body.toggleClass('has-navigation-active');
+		});
+
+		$(".page-wrapper-overlay").on('click', function () {
+			$cache.body.toggleClass('has-navigation-active');
+		});
+
+
+		// Mobile Flyout menu
+		// -----------------------------------------------------------
+		var cascadeLevel = 1;
+		$('#site-navigation').on('click', '.menu-item-has-children > .menu-main-link', function () {
+			var $el = $(this),
+				$parent = $el.parent("li");
+
+			// Force next navigation level to be shown
+			$parent.addClass('is-expanded').siblings().removeClass('is-expanded');
+
+			cascadeLevel++;
+			$cache.navigation.addClass('cascade-level-' + cascadeLevel);
+
+			if (responsive.settings.isSM || responsive.settings.isXS) {
+				return false;
+			}
+
+		});
+
+		$('#site-navigation').on('click', '.js-menu-back-button ', function () {
+			$cache.navigation.removeClass('cascade-level-' + cascadeLevel);
+			cascadeLevel--;
+			$cache.navigation.addClass('cascade-level-' + cascadeLevel);
+
+			return false;
+		});
+
 
 	}
 };
@@ -70,4 +93,5 @@ var SBchild = {
 (function($) {
 	"use strict";
 	SBchild.init($);
+	$(window).resize(responsive.fireEvents);
 })(jQuery);

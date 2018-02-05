@@ -31,6 +31,9 @@ var paths = {
 		dest: './css',
 		imports : './scss/**/*.scss'
 	},
+	head: {
+		src: ['./js/head/modernizr-3.4.0.js']
+	},		
 	scripts: {
 		src: ['./js/plugins/*.js', './js/script.js']
 	},
@@ -114,6 +117,11 @@ gulp.task('scss', function () {
 		.pipe(gulp.dest(paths.scss.dest));
 });	
 
+// Build head.js
+gulp.task('head', function () {
+	buildJS(paths.head.src, 'head.js');
+});
+
 // Build scripts.js
 gulp.task('scripts', function() {
 	buildJS(paths.scripts.src, 'scripts.js');
@@ -130,4 +138,4 @@ gulp.task('watch', function () {
 gulp.task('production', ['copytheme', 'ziptheme']);
 
 // Build all Front End code, Less and JS
-gulp.task('default', ['scss', 'scripts', 'watch']);
+gulp.task('default', ['scss', 'head', 'scripts', 'watch']);
