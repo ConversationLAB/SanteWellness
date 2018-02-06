@@ -48,6 +48,9 @@ $hide_the_sidebar = get_field('hide_the_sidebar');
 
 // Column layout logic
 if($subMenu) {	
+	// Nav sidebar
+	// col-lg-3 col-md-3
+
 	if($hide_the_sidebar) {
 		// Nav Column, no Sidebar
 		$col_content = "col-lg-9 col-md-12";
@@ -63,7 +66,7 @@ if($subMenu) {
 	} else {
 		// No Nav Column, and Sidebar
 		$col_content = "col-lg-10 col-md-10";
-		$col_sidebar = "col-lg-2 col-md-12";
+		$col_sidebar = "col-lg-2 col-md-10";
 	}
 }
 
