@@ -74,7 +74,7 @@ if($subMenu) {
 $book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
 ?>
 
-<div id="post-<?php the_ID(); ?>" <?php post_class('page-single / clearfix row'); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class('page-single / clearfix row baseline-md'); ?>>
 
 	<?php if($subMenu) : ?>
 	<div class="page__nav_sidebar / col-lg-3 col-md-3">

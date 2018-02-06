@@ -117,8 +117,23 @@ function sesha_brochure_button() {
    return $button_string;
 }
 
+function sesha_booking_button() {
+	$book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
+	
+	$button_string = '
+	<p>
+		<a class="btn btn-secondary btn-xs  btn-block"" href="'.$book_now_url.'">
+			<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+			Book Now
+		</a>
+	</p>';
+
+	return $button_string;
+}
+
 function sesha_register_shortcodes() {
    add_shortcode('brochure-button', 'sesha_brochure_button');
+   add_shortcode('book-now-button', 'sesha_booking_button');
 }
 
 add_action( 'init', 'sesha_register_shortcodes');

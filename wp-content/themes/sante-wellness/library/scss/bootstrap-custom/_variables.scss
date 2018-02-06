@@ -19,7 +19,7 @@ $gray-darker:   		darken($gray-base, 15%) !default;
 $gray-dark:         	darken($gray-base, 10%) !default;
 $gray:              	$gray-base !default;
 $gray-light:        	lighten($gray-base, 10%) !default;
-$gray-lighter:      	lighten($gray-base, 45%) !default;
+$gray-lighter:      	lighten($gray-base, 35%) !default;
 
 
 $red : 		#eb1c23;
@@ -864,7 +864,7 @@ $thumbnail-padding:           4px !default;
 //** Thumbnail background color
 $thumbnail-bg:                $body-bg !default;
 //** Thumbnail border color
-$thumbnail-border:            #ddd !default;
+$thumbnail-border:            $brand-primary !default;
 //** Thumbnail border radius
 $thumbnail-border-radius:     $border-radius-base !default;
 

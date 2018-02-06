@@ -40,7 +40,8 @@ var SBchild = {
             "infinite": true,
             "draggable": true,
             "slidesToShow": 1,
-            "autoplay": true,
+			"autoplay": true, 
+			"autoplaySpeed" : 10000,
             "nextArrow": '<button type="button" class="slick-arrow slick-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>',
             "prevArrow": '<button type="button" class="slick-arrow slick-prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>'
         });
