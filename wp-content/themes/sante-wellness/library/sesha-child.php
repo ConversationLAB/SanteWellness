@@ -44,6 +44,7 @@ function sesha_theme_support_child() {
 	register_nav_menus(
 		array(
 			'main-nav' => __( 'The Main Menu', 'sesha' ),   // main nav in header
+			'footer-nav' => __( 'The Footer Menu', 'sesha' ),   // main nav in footer
 		)
 	);
 

@@ -1,6 +1,8 @@
 <?php
 // LOAD CHILD CORE 
 require_once( 'library/sesha-child.php' );
+// CUSTOMISE FOOTER MENU HTML OUTPUT
+require_once( 'library/custom-wp-footer-menu.php' );
 // CUSTOMISE MAIN MENU HTML OUTPUT
 require_once( 'library/custom-wp-main-menu.php' );
 // CUSTOM MCE WYSIWYG EDITOR STYLES

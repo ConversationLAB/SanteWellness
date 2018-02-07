@@ -35,23 +35,28 @@
 		}		
 	}
 	.slideshow__banner-title-wrapper  {
+		// background-color: red;
 
 
 		&[data-slideshow-text-position="Top Right"] {
 			bottom: $slideshow_pos_y;
-			left: $slideshow_pos_x;
+			left: $slideshow_pos_x;			
+			right: 50px;
 		}
 		&[data-slideshow-text-position="Top Left"] {
 			bottom: $slideshow_pos_y;
 			right: $slideshow_pos_x;
+			left: 50px;
 		}
 		&[data-slideshow-text-position="Bottom Left"] {
 			top: $slideshow_pos_y;
 			right: $slideshow_pos_x;
+			left: 50px;
 		}
 		&[data-slideshow-text-position="Bottom Right"] {
 			top: $slideshow_pos_y;
 			left: $slideshow_pos_x;
+			right: 50px;
 		}
 	}	
 }
