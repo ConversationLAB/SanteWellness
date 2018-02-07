@@ -25,6 +25,13 @@ function sesha_after_acf_init() {
 }
 
 
+function remove_menus(){
+	remove_menu_page( 'edit.php' );                   //Posts
+	remove_menu_page( 'edit-comments.php' );          //Comments
+}
+add_action( 'admin_menu', 'remove_menus' );
+
+
 // Call filters and actions
 // -------------------------------------------------------------------------------
 add_action( 'after_setup_theme', 'launch_sesha_child' );
@@ -107,12 +114,11 @@ function sesha_brochure_button() {
 	endif;
 
 	$button_string = '
-	<p>
-		<a class="btn btn-secondary btn-xs" href="'.$document['url'].'" target="_blank">
-			<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-			'.$title.'
-		</a>
-	</p>';
+	<a class="btn btn-secondary btn-xs" href="'.$document['url'].'" target="_blank">
+		<i class="fa fa-file-pdf-o" aria-hidden="true"></i> 
+		'.$title.'
+	</a>
+	';
 
    return $button_string;
 }
@@ -121,12 +127,10 @@ function sesha_booking_button() {
 	$book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
 	
 	$button_string = '
-	<p>
-		<a class="btn btn-secondary btn-xs  btn-block"" href="'.$book_now_url.'">
-			<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-			Book Now
-		</a>
-	</p>';
+	<a class="btn btn-secondary btn-xs"" href="'.$book_now_url.'">
+		Book Now
+	</a>
+	';
 
 	return $button_string;
 }

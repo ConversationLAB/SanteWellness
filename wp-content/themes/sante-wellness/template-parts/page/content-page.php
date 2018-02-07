@@ -16,7 +16,11 @@ if ( is_page() && $post->post_parent ) {
 	$is_parent = true;
 	$ancestors = get_post_ancestors($post->ID);
 	$root = count($ancestors)-1;
-	$postID = $ancestors[$root];	
+	$postID = $ancestors[$root];
+
+	$parent_title = get_the_title( $postID );
+	$parent_permalink = get_the_permalink( $postID  );
+	
 } else {
 	$is_parent = false;
 	$postID = get_the_ID();
@@ -79,6 +83,15 @@ $book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
 	<?php if($subMenu) : ?>
 	<div class="page__nav_sidebar / col-lg-3 col-md-3">
 		<ol class="subnav__menu / menu-vert / visible-md-block visible-lg-block">
+			
+			<?php if($is_parent) : ?>
+				<li class="subnav__level-1 subnav__menu-item">
+					<a href="<?php echo $parent_permalink; ?>" class="subnav__button / btn btn-secondary btn-block btn-lg">
+						<?php echo $parent_title; ?>
+					</a>
+				</li>
+			<?php endif; ?>
+
 			<?php echo $subMenu; ?>
 		</ol>
 
