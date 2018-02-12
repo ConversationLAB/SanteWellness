@@ -10,8 +10,10 @@
 
 			<a class="pagelink__link" href="<?php the_permalink(); ?>">
 
-				<span class="pagelink__title text-uppercase j3 baseline-none <?php echo $hide_text_class; ?>">
-					<?php the_title(); ?>
+				<span class="pagelink__title text-uppercase j3 baseline-none">
+					<span class="<?php echo $hide_text_class; ?>">
+						<?php the_title(); ?>
+					</span>
 				</span>
 
 				<span class="pagelink__thumbnail">

@@ -45,7 +45,7 @@ function sesha_theme_support_child() {
 		array(
 			'main-nav' => __( 'The Main Menu', 'sesha' ),   // main nav in header
 			'footer-nav' => __( 'The Footer Menu', 'sesha' ),   // main nav in footer
-			'day-spa-nav' => __( 'The Day Spa', 'sesha' ),   // side menu for day spa
+			'day-spa-nav' => __( 'The Day Spa Menu', 'sesha' ),   // side menu for day spa
 		)
 	);
 

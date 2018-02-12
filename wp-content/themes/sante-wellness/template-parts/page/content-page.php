@@ -27,18 +27,30 @@ if ( is_page() && $post->post_parent ) {
 }
 
 
+// Book now URL
+if( get_field('book_now_link') ) {
+	$book_now_url = get_field('book_now_link');
+} else {
+	$book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
+}
+
 // Are we on a Tabbed Page Template?
 $is_tabbed_page = is_page_template('page-tabbed-content.php');
 
+// Use the override Day Spa menu?
+$use_override_menu = get_field('use_override_day_spa_menu', $postID);
 
 // Print out Sub Navigation Menu
-$subMenu = wp_list_pages(array(
-	'child_of' => $postID, 
-	'title_li' => '',
-	'echo' => 0,
-	'walker' => new sub_menu_walker() 
-));
+if(empty($use_override_menu)) {
+	$subMenu = wp_list_pages(array(
+		'child_of' => $postID, 
+		'title_li' => '',
+		'echo' => 0,
+		'walker' => new sub_menu_walker() 
+	));
+} 
 
+// Create a select dropdown mobile only menu
 $subMenu_mobile = wp_list_pages(array(
 	'child_of' => $postID, 
 	'title_li' => '',
@@ -49,46 +61,39 @@ $subMenu_mobile = wp_list_pages(array(
 // Show or hide the sidebar
 $hide_the_sidebar = get_field('hide_the_sidebar');
 
-
 // Column layout logic
-if($subMenu) {	
-	// Nav sidebar
+if($subMenu || $use_override_menu) {
+	
+	// Nav Column
 	// col-lg-3 col-md-3
-
 	if($hide_the_sidebar) {
 		// Nav Column, no Sidebar
-		$col_content = "col-lg-9 col-md-12";
+		$col_content = "col-lg-9 col-md-9";
 	} else {
 		// Nav Column, and Sidebar
 		$col_content = "col-lg-7 col-md-7";
-		$col_sidebar = "col-lg-2 col-md-12";
+		$col_sidebar = "col-lg-2 col-md-2";
 	}
 } else {
+	// Nav Column
+	// col-lg-0 col-md-0
 	if($hide_the_sidebar) {
 		// No Nav Column, No Sidebar
 		$col_content = "col-lg-12 col-md-12";
 	} else {
 		// No Nav Column, and Sidebar
 		$col_content = "col-lg-10 col-md-10";
-		$col_sidebar = "col-lg-2 col-md-10";
+		$col_sidebar = "col-lg-2 col-md-2";
 	}
-}
-
-// Book now URL
-if( get_field('book_now_link') ) {
-	$book_now_url = get_field('book_now_link');
-} else {
-	$book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
 }
 ?>
 
 <div id="post-<?php the_ID(); ?>" <?php post_class('page-single / clearfix row baseline-md'); ?>>
 
-	<?php if($subMenu) : ?>
+	<?php if($subMenu || $use_override_menu) : ?>
 	<div class="page__nav_sidebar / col-lg-3 col-md-3">
 
-		<ol class="subnav__menu / menu-vert / visible-md-block visible-lg-block">
-			
+		<ol class="subnav__menu / menu-vert / visible-md-block visible-lg-block">			
 			<?php if($is_parent) : ?>
 				<li class="subnav__level-1 subnav__menu-item">
 					<a href="<?php echo $parent_permalink; ?>" class="subnav__button / btn btn-secondary btn-block btn-lg">
@@ -100,14 +105,26 @@ if( get_field('book_now_link') ) {
 			<?php echo $subMenu; ?>
 		</ol>
 
+		<?php
+		if($use_override_menu) :
+			wp_nav_menu(array(
+				'container' => false,                           // remove nav container
+				'menu' => __( 'The Day Spa Menu', 'sesha' ),  // nav name
+				'menu_class' => 'subnav__menu / menu-vert / visible-md-block visible-lg-block',               // adding custom nav class
+				'theme_location' => 'day-spa-nav',                 // where it's located in the theme
+				'fallback_cb' => '',                            // fallback function (if there is one)
+				'walker' => new site_day_spa_menu()
+			)); 
+		endif;
+		?>
+
 		<select class="js-page-select / subnav__menu / visible-xs-block visible-sm-block baseline-sm input-lg">
 			<option value="">Choose a page ...</option>
 			<?php echo $subMenu_mobile; ?>
 		</select>
+
 	</div>
 	<?php endif; ?>
-
-
 
 
 	<div class="page__content / <?php echo $col_content; ?>">

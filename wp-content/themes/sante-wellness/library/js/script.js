@@ -11,19 +11,6 @@ var SBchild = {
         };
 
 
-		// Window scroll - navbar animation
-		// ------------------------------------------------------------------
-		$(window).scroll(function() {
-			var scrollposition = $(window).scrollTop();
-
-			if(scrollposition > 400) {
-				$cache.body.addClass('has-reduced-menu');
-			} else {
-				$cache.body.removeClass('has-reduced-menu');
-			}
-		});
-
-		
 		// Mobile slect drop down links
 		// ------------------------------------------------------------------
 		$cache.body.on('change', '.js-page-select', function() {
@@ -31,7 +18,6 @@ var SBchild = {
 				value = $el.val();
 			
 			window.location = value;
-
 		});
 
         // Slideshows
