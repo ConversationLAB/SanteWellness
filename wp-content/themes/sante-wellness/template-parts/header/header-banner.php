@@ -1,5 +1,9 @@
 <?php 
-$book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
+if( get_field('book_now_link') ) {
+	$book_now_url = get_field('book_now_link');
+} else {
+	$book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
+}
 ?>
 
 <header id="site-header" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">

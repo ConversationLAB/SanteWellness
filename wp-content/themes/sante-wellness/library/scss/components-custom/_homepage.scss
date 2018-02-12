@@ -11,10 +11,13 @@
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: $baseline-sm;
-    min-height: 35vh;
+    min-height: 300px;
+
+	&.text-white {
+		color: $white; 
+	}
 
     &.is-alternate {
-        color: $white; 
 		padding-right: $padding-md;
 
         .landing__block-buttons {
@@ -34,13 +37,13 @@
 		}
     }
     
-    .landing__block-wrapper {
+    .home .landing__block-wrapper {
         min-height: 35vh;      
     }
 }
 
 @media (max-width: $grid-float-breakpoint-max) {
-    .landing__block-wrapper {
+    .home .landing__block-wrapper {
         min-height: 200px;      
     }
 }

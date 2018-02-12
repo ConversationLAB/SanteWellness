@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in front-page.php
+ * Template part for displaying a menu similar to the landing page, but on any content page
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -11,12 +11,6 @@
  */
 
 ?>
-<div class="baseline-md">
-	<h1 class="sr-only">
-		<?php the_title() ?>
-	</h1>
-	<?php the_content(); ?>
-</div>
 
 <?php 
 if( have_rows('landing_blocks') ): 
@@ -36,28 +30,24 @@ if( have_rows('landing_blocks') ):
 		<?php
 			if($row_index%2 == 0) {
 				if($column_index%2 == 0) {
-					$col = 'is-main / col-md-8 col-lg-8';
-					$h_class = 'j1 baseline-sm';
+					$col = '';		
 				} else {
-					$col = 'is-alternate / col-md-4 col-lg-4 / text-white';
-					$h_class = 'j2 baseline-sm';
+					$col = 'text-white';
 				}			
 			} else {
 				if($column_index%2 == 0) {
-					$col = 'is-alternate / col-md-4 col-lg-4 / text-white';
-					$h_class = 'j2 baseline-sm';
+					$col = 'text-white';
 				} else {
-					$col = 'is-main / col-md-8 col-lg-8';
-					$h_class = 'j1 baseline-sm';
+					$col = '';
 				}		
 			}	
 		?>
 
-		<div class="landing__block-wrapper / <?php echo $col; ?>" <?php echo $image; ?>>
+		<div class="landing__block-wrapper / <?php echo $col; ?> / col-md-6 col-lg-6" <?php echo $image; ?>>
 
 			<div class="landing__block-content">
 			
-				<h2 class="landing__block-title / <?php echo $h_class; ?>">
+				<h2 class="landing__block-title / j1 baseline-sm">
 					<?php echo $title; ?>
 				</h2>
 

@@ -4,7 +4,11 @@
  *
 */
 
-$book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
+if( get_field('book_now_link') ) {
+	$book_now_url = get_field('book_now_link');
+} else {
+	$book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
+}
 ?>
 
 <?php // Site navigation ?>

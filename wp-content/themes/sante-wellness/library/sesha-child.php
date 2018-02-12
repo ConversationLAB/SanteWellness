@@ -45,6 +45,7 @@ function sesha_theme_support_child() {
 		array(
 			'main-nav' => __( 'The Main Menu', 'sesha' ),   // main nav in header
 			'footer-nav' => __( 'The Footer Menu', 'sesha' ),   // main nav in footer
+			'day-spa-nav' => __( 'The Day Spa', 'sesha' ),   // side menu for day spa
 		)
 	);
 
@@ -125,7 +126,12 @@ function sesha_brochure_button() {
 }
 
 function sesha_booking_button() {
-	$book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
+
+	if( get_field('book_now_link') ) {
+		$book_now_url = get_field('book_now_link');
+	} else {
+		$book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
+	}
 	
 	$button_string = '
 	<a class="btn btn-secondary btn-xs"" href="'.$book_now_url.'">

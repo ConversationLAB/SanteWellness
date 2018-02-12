@@ -75,13 +75,18 @@ if($subMenu) {
 }
 
 // Book now URL
-$book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
+if( get_field('book_now_link') ) {
+	$book_now_url = get_field('book_now_link');
+} else {
+	$book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
+}
 ?>
 
 <div id="post-<?php the_ID(); ?>" <?php post_class('page-single / clearfix row baseline-md'); ?>>
 
 	<?php if($subMenu) : ?>
 	<div class="page__nav_sidebar / col-lg-3 col-md-3">
+
 		<ol class="subnav__menu / menu-vert / visible-md-block visible-lg-block">
 			
 			<?php if($is_parent) : ?>
@@ -102,6 +107,9 @@ $book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
 	</div>
 	<?php endif; ?>
 
+
+
+
 	<div class="page__content / <?php echo $col_content; ?>">
 
 		<h1>
@@ -109,6 +117,8 @@ $book_now_url = get_permalink( get_option( 'setting_book_now_link' ) );
 		</h1>
 
 		<?php the_content(); ?>	
+	
+		<?php get_template_part( 'template-parts/page/content', 'page-menu' ); ?>
 
 		<?php 
 		if($is_tabbed_page) : 
