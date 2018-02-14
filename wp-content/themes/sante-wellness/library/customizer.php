@@ -109,38 +109,8 @@ function sesha_customize_register($wp_customize){
 		'priority' => 40,
 		'capability' => 'edit_theme_options',
 		'theme_supports' => '',
-		'title' => __( 'Site Contact Details', 'sesha' ),
-		'description' => 'Sante Contact Details'
-	) );
-
-	$wp_customize->add_setting( 'setting_contact_number', array(
-		'default' => '',
-		'type' => 'option',
-		'capability' => 'edit_theme_options'		
-	) );
-	
-	$wp_customize->add_control( 'setting_contact_number', array(
-		'type' => 'text',
-		'priority' => 10,
-		'section' => 'section_contact_details',
-		'settings'   => 'setting_contact_number',
-		'label' => __( 'Contact Number', 'sesha' ),
-		'description' => 'Contact number, in international dialing code format <br> +44777777777',
-	) );
-
-	$wp_customize->add_setting( 'setting_contact_email', array(
-		'default' => '',
-		'type' => 'option',
-		'capability' => 'edit_theme_options'		
-	) );
-	
-	$wp_customize->add_control( 'setting_contact_email', array(
-		'type' => 'text',
-		'priority' => 20,
-		'section' => 'section_contact_details',
-		'settings'   => 'setting_contact_email',
-		'label' => __( 'Contact Email', 'sesha' ),
-		'description' => 'Contact email address',
+		'title' => __( 'Book Now Link', 'sesha' ),
+		'description' => 'Link to the default booking form page'
 	) );
 
     $wp_customize->add_setting('setting_book_now_link', array(
@@ -157,41 +127,6 @@ function sesha_customize_register($wp_customize){
 		'allow_addition' => false,
     ));
 
-
-
-
-	// Google Analytics
-	// ----------------------------------------------------------------------------
-	$wp_customize->add_section( 'section_analytics', array(
-		'priority' => 40,
-		'capability' => 'edit_theme_options',
-		'theme_supports' => '',
-		'title' => __( 'Site Analytics', 'sesha' ),
-		'description' => 'Add your Google or Minion Analytics account details'
-	) );
-
-	$wp_customize->add_setting( 'setting_google_analytics', array(
-		'default' => '',
-		'type' => 'option',
-		'capability' => 'edit_theme_options',
-		'validate_callback' => 'validate_UA_code'
-	) );
-	
-	$wp_customize->add_control( 'setting_google_analytics', array(
-		'type' => 'text',
-		'priority' => 10,
-		'section' => 'section_analytics',
-		'settings'   => 'setting_google_analytics',
-		'label' => __( 'Google Analytics Code', 'sesha' ),
-		'description' => 'Add your Analytics code here, in this format : <br> UA-XXXXXXX-XX',
-	) );
-
-	function validate_UA_code( $validity, $value ) {
-		if ( !empty( $value ) && preg_match('/^ua-\d{4,9}-\d{1,4}$/i', strval($value)) == 0 ) {
-			$validity->add( 'required', __( 'You must supply a valid UA code.' ) );
-		}
-		return $validity;
-	}
 
 
 
@@ -325,32 +260,6 @@ function sesha_customize_register($wp_customize){
         'choices'    => $font_weights_array	
 	));
 	
-
-
-	function validate_google_font( $validity, $value ) {
-		if ( !empty( $value ) ) {
-			$validity->add( 'required', __( 'You must supply a valid font.' ) );
-		}
-		return $validity;
-	}
-
-
-	// Add Custom Colours to 'Colors' Panel
-	// ----------------------------------------------------------------------------	
-	$wp_customize->add_setting('setting_accent_color', array(
-			'default' => '#333333',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control($wp_customize, 'setting_accent_color',
-			array(
-				'label'      => __( 'Accent Color', 'sesha' ), 
-				'section'    => 'colors',
-				'settings'   => 'setting_accent_color'
-			)
-		)
-	);
 
 
 }
