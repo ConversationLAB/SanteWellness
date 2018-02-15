@@ -68,13 +68,18 @@ if( have_rows('landing_blocks') ):
 			<div class="landing__block-buttons">
 			<?php
 				foreach ($buttons as $key => $button) {
+					if( get_field('read_more_link', $button->ID) ) {
+						$title = get_field('read_more_link', $button->ID);
+					} else {
+						$title = $button->post_title;
+					}
 					printf('
 						<a href="%s" class="btn-landing / btn btn-default btn-xs">
 							%s
 						</a>
 					',
 					get_permalink( $button->ID),
-					$button->post_title
+					$title					
 					);
 				}
 			?>
