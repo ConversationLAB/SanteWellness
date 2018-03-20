@@ -121,6 +121,9 @@ function sesha_child_scripts_and_styles() {
 
 
 
+
+// Brochure button Shortcodes
+// -------------------------------------------------------------------------------
 function sesha_brochure_button() {
 	if ( get_field('upload_documents') ) : 
 		$document = get_field('upload_documents');
@@ -158,9 +161,26 @@ function sesha_booking_button() {
 	return $button_string;
 }
 
+
 function sesha_register_shortcodes() {
    add_shortcode('brochure-button', 'sesha_brochure_button');
    add_shortcode('book-now-button', 'sesha_booking_button');
 }
 
+add_action( 'init', 'sesha_register_shortcodes');
+
+
+// Validate Phone number for gravity forms
+// -------------------------------------------------------------------------------
+add_filter( 'gform_field_validation', 'validate_phone', 10, 4 );
+function validate_phone( $result, $value, $form, $field ) {
+    $pattern = "/^[0-9+\(\)#\.\s\/-]+$/";
+
+    if ( $field->type == 'phone' && $field->phoneFormat != 'standard' && ! preg_match( $pattern, $value ) ) {
+        $result['is_valid'] = false;
+        $result['message']  = 'Please enter a valid phone number';
+    }
+ 
+    return $result;
+}
 add_action( 'init', 'sesha_register_shortcodes');
